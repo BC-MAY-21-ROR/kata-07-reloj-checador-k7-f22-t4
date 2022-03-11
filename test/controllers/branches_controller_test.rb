@@ -38,11 +38,4 @@ class BranchesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to branch_url(@branch)
   end
 
-  test "should destroy branch" do
-    assert_difference("Branch.count", -1) do
-      delete branch_url(@branch)
-    end
-
-    assert_redirected_to branches_url
-  end
 end

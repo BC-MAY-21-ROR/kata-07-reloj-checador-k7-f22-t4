@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+$primaryColor: #AEFEFF;
+$very_pale_cyan: #4FBDBA;
+$very_Dark_Cyan: #072227;
+$normal_Cyan: #35858B;
+
+@mixin center-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center-grid {
+  display: grid;
+  place-items: center;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.primary-button {
+  background-color: $primaryColor;
+  border-color: $primaryColor;
+  color: $very_Dark_Cyan;
+  font-size: 2.5rem;
+  width: auto;
+  padding: 0 1.5rem;
+  height: 4rem;
+  border-radius: 15px;
+  border-width: 2px;
+}
+
+body {
+  background-color: $normal_Cyan; 
+  @include center-grid;
+  padding: 3rem;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Quicksand', sans-serif;
+
+  div.container {
+    background-color: $very_pale_cyan;
+    border-radius: 1rem;
+    width: 95%;
+    height: 90%;
+    box-shadow: 1px 1px 10px 1px black;
+    @include center-flex;
+    
+    figure {
+      width: 15rem;
+      height: 15rem;
+      background-color: #072227;
+      border-radius: 50%;
+      @include center-grid;
+
+      img {
+        width: 70%;
+      }
+    }
+
+    form {
+
+      .field {
+        margin-top: 1rem;
+
+        input {
+          background-color: #072227;
+          color: #ffaeae;
+          border: none;
+          padding: 0.8rem 1.2rem;
+          border-radius: 2rem;
+
+        }
+
+        input::placeholder {
+          color: $primaryColor;
+        }
+
+      }
+    }
+  }
+}

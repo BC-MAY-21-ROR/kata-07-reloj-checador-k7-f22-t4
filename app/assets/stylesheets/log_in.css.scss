@@ -55,38 +55,62 @@ body {
     height: 90%;
     box-shadow: 1px 1px 10px 1px black;
     @include center-flex;
-    
-    figure {
-      width: 15rem;
-      height: 15rem;
-      background-color: #072227;
-      border-radius: 50%;
-      @include center-grid;
+    position: relative;
 
-      img {
-        width: 70%;
+    div {
+      width: 35rem;
+      @include center-flex;
+
+      figure {
+        width: 22rem;
+        height: 22rem;
+        background-color: #072227;
+        border-radius: 50%;
+        @include center-grid;
+
+        img {
+          width: 70%;
+        }
+      }
+
+      form {
+
+        div {
+          margin-top: 1rem;
+        }
+
+        .field {
+          width: 100%;
+  
+          input {
+            background-color: #072227;
+            color: #ffaeae;
+            border: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 2rem;
+            width: 100%;
+          }
+  
+          input::placeholder {
+            color: $primaryColor;
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      a {
+        margin-top: 1rem;
+        font-size: 2rem;
+        width: 100%;
+        text-align: left;
+        color: $very_Dark_Cyan;
       }
     }
 
-    form {
-
-      .field {
-        margin-top: 1rem;
-
-        input {
-          background-color: #072227;
-          color: #ffaeae;
-          border: none;
-          padding: 0.8rem 1.2rem;
-          border-radius: 2rem;
-
-        }
-
-        input::placeholder {
-          color: $primaryColor;
-        }
-
-      }
+    button {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
     }
   }
 }

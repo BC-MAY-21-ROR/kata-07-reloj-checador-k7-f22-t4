@@ -1,29 +1,20 @@
 <div>
-
   <figure class="profile-pic">
     <img src="https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Image-Background.png" alt="profile-picture">
   </figure>
-
   <form class="new-user" id="new_user" action="/">
-
       <div class="field">
         <label for="name"></label>
         <input type="text" name="admin[name]" id="name" placeholder="Type your name">
       </div>
-
       <div class="field">
         <label for="password"></label>
         <input type="password" name="admin[password]" id="password" placeholder="Type your password">
       </div>
-
       <div class="actions">
         <input type="submit" name="commit" value="Log in" class="primary-button">
       </div>
-
   </form>
-
   <a href="/">Sign up</a>
-
 </div>
-
-<%= button_to "Back to home", root_path, method: :get, class:"primary-button"%>
+<%= button_to 'Back to home', root_path, method: :get, class:"primary-button" %>

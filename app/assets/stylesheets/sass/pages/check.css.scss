@@ -1,16 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
-
-$primaryColor: #AEFEFF;
-$very_pale_cyan: #4FBDBA;
-$very_Dark_Cyan: #072227;
-$normal_Cyan: #35858B;
-
-@mixin center-flex {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+@import '../abstracts/*';
 
 * {
   box-sizing: border-box;
@@ -38,7 +27,7 @@ body {
   padding: 3rem;
   width: 100vw;
   height: 100vh;
-  font-family: 'Quicksand', sans-serif;
+  font-family: $font-stack;
 
   div.container {
     background-color: $very_pale_cyan;
@@ -113,7 +102,7 @@ body {
             }
             input[type=button] {
               background-color:$normal_Cyan;
-              border-color: #35858B;
+              border-color: $normal_Cyan;
               border-width: 2px;
               color: white;
               box-shadow: 1px 1px 1px 1px black;

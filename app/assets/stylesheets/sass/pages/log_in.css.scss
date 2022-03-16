@@ -1,27 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
-
-$primaryColor: #AEFEFF;
-$very_pale_cyan: #4FBDBA;
-$very_Dark_Cyan: #072227;
-$normal_Cyan: #35858B;
-
-@mixin center-flex {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin center-grid {
-  display: grid;
-  place-items: center;
-}
+@import '../abstracts/*';
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: $font-stack
 }
 
 html {
@@ -46,7 +30,6 @@ body {
   padding: 3rem;
   width: 100vw;
   height: 100vh;
-  font-family: 'Quicksand', sans-serif;
 
   div.container {
     background-color: $very_pale_cyan;
@@ -64,7 +47,7 @@ body {
       figure {
         width: 22rem;
         height: 22rem;
-        background-color: #072227;
+        background-color: $very_Dark_Cyan;
         border-radius: 50%;
         @include center-grid;
 
@@ -83,8 +66,7 @@ body {
           width: 100%;
   
           input {
-            background-color: #072227;
-            color: #ffaeae;
+            background-color: $very_Dark_Cyan;
             border: none;
             padding: 0.8rem 1.2rem;
             border-radius: 2rem;

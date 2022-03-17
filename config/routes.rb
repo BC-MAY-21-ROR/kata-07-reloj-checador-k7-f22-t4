@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "employees#check"
+  get "/employees", to: "employees#test"
+  # Defines the root path route ("/")
+  
 end

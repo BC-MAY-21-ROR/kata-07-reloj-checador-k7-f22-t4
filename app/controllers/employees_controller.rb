@@ -10,6 +10,7 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1 or /employees/1.json
   def show
+
   end
 
   # GET /employees/new
@@ -17,6 +18,11 @@ class EmployeesController < ApplicationController
     @employee = Employee.new
     @branches = Branch.all
   end
+
+  #Test 
+  def test 
+    layout "test"
+  end 
 
   # GET /employees/1/edit
   def edit

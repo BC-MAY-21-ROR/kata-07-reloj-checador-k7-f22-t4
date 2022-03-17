@@ -1,32 +1,16 @@
 <div id="<%= dom_id employee %>">
-  <p>
-    <strong>Name:</strong>
-    <%= employee.name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= employee.email %>
-  </p>
-
-  <p>
-    <strong>Position:</strong>
-    <%= employee.position %>
-  </p>
-
-  <p>
-    <strong>Private code:</strong>
-    <%= employee.private_code %>
-  </p>
-
-  <p>
-    <strong>Active:</strong>
-    <%= employee.active %>
-  </p>
-
-  <p>
-    <strong>Branch:</strong>
-    <%= employee.branch.name %>
-  </p>
+ 
+  <tbody>
+    <tr>
+      <td><%= employee.name %></td>
+      <td><%= employee.email %></td>
+      <td><%= employee.position %></td>
+      <td><%= employee.id %></td>
+      <td><%= employee.private_code %></td>
+      <td><%= employee.branch_id %></td>
+      <td><%= employee.active %></td>
+      <td><i class="fa-solid fa-pen-to-square"></i></td>
+    </tr>
+  </tbody>
 
 </div>

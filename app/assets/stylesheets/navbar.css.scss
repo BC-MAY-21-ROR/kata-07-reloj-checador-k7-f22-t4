@@ -42,14 +42,18 @@ $normal_Cyan: #35858B;
       }
     }
   }
+  ul li {
+    display: inline-block;
+    font-size: 20px;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $normal_Cyan;
+    cursor: pointer;
+  }
 }
 
-ul li {
-  display: inline-block;
-  font-size: 20px;
-}
-
-ul li:hover {
-  color: $normal_Cyan;
-  cursor: pointer;
-}

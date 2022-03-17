@@ -3,9 +3,9 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
+  font-family: $font-stack;
   margin: 0;
-  font-family: $font-stack
+  padding: 0;
 }
 
 html {
@@ -15,41 +15,41 @@ html {
 .primary-button {
   background-color: $primaryColor;
   border-color: $primaryColor;
-  color: $very_Dark_Cyan;
-  font-size: 2.5rem;
-  width: auto;
-  padding: 0 1.5rem;
-  height: 4rem;
   border-radius: 15px;
   border-width: 2px;
+  color: $very_Dark_Cyan;
+  font-size: 2.5rem;
+  height: 4rem;
+  padding: 0 1.5rem;
+  width: auto;
 }
 
 body {
-  background-color: $normal_Cyan; 
   @include center-grid;
+  background-color: $normal_Cyan; 
+  height: 100vh;
   padding: 3rem;
   width: 100vw;
-  height: 100vh;
 
   div.container {
+    @include center-flex;
     background-color: $very_pale_cyan;
     border-radius: 1rem;
-    width: 95%;
-    height: 90%;
     box-shadow: 1px 1px 10px 1px black;
-    @include center-flex;
+    height: 90%;
     position: relative;
+    width: 95%;
 
     div {
-      width: 35rem;
       @include center-flex;
+      width: 35rem;
 
       figure {
-        width: 22rem;
-        height: 22rem;
+        @include center-grid;
         background-color: $very_Dark_Cyan;
         border-radius: 50%;
-        @include center-grid;
+        height: 22rem;
+        width: 22rem;
 
         img {
           width: 70%;
@@ -67,9 +67,9 @@ body {
   
           input {
             background-color: $very_Dark_Cyan;
+            border-radius: 2rem;
             border: none;
             padding: 0.8rem 1.2rem;
-            border-radius: 2rem;
             width: 100%;
           }
   
@@ -81,17 +81,17 @@ body {
       }
 
       a {
-        margin-top: 1rem;
-        font-size: 2rem;
-        width: 100%;
-        text-align: left;
         color: $very_Dark_Cyan;
+        font-size: 2rem;
+        margin-top: 1rem;
+        text-align: left;
+        width: 100%;
       }
     }
 
     button {
-      position: absolute;
       bottom: 1rem;
+      position: absolute;
       right: 1rem;
     }
   }

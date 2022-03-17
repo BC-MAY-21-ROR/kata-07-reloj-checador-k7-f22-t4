@@ -3,53 +3,53 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
   font-size: 62.5%;
+  margin: 0;
+  padding: 0;
 }
 
 .primary-button {
   background-color: $primaryColor;
   border-color: $primaryColor;
-  color: $very_Dark_Cyan;
-  font-size: 2.5rem;
-  width: auto;
-  padding: 0 1.5rem;
-  height: 4rem;
   border-radius: 15px;
   border-width: 2px;
+  color: $very_Dark_Cyan;
+  font-size: 2.5rem;
+  height: 4rem;
+  padding: 0 1.5rem;
+  width: auto;
 }
 
 body {
   background-color: $normal_Cyan; 
   display: grid;
-  place-items: center;
-  padding: 3rem;
-  width: 100vw;
-  height: 100vh;
   font-family: $font-stack;
+  height: 100vh;
+  padding: 3rem;
+  place-items: center;
+  width: 100vw;
 
   div.container {
+    @include center-flex;
     background-color: $very_pale_cyan;
     border-radius: 1rem;
-    width: 95%;
-    height: 90%;
     box-shadow: 1px 1px 10px 1px black;
-    @include center-flex;
     gap: 3rem;
+    height: 90%;
+    width: 95%;
 
     header {
       .logo {
         background-color:$very_Dark_Cyan;
-        width: 50rem;
-        text-align: center;
         border-radius: 2rem;
         padding: 1rem;
+        text-align: center;
+        width: 50rem;
         
         h1 {
-          font-weight: 400;
-          font-size: 8rem;
           color: white;
+          font-size: 8rem;
+          font-weight: 400;
           
         }
       }
@@ -57,41 +57,41 @@ body {
     }
 
     main {
-      width: 80%;
       display: flex;
       justify-content: space-around;
+      width: 80%;
 
       div.check {
         
         div.numeric-pad {
-          width: 25rem;
-          height: 30rem;
           background-color: $very_Dark_Cyan;
+          border-radius: 1rem;
           display: flex;
           flex-direction: column;
           gap: 8px;
+          height: 30rem;
           padding: 1rem;
-          border-radius: 1rem;
+          width: 25rem;
           
           div.screen {
             background-color: $normal_Cyan;
             border-radius: 1.3rem;
-            width: 100%;
-            height: auto;
-            font-size: 7rem;
             color: white;
-            text-align: right;
+            font-size: 7rem;
+            height: auto;
             padding-right: 0.4rem;
+            text-align: right;
+            width: 100%;
           }
 
           div.numbers-button {
+            column-gap: 0.8rem;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            width: 100%;
             height: 100%;
-            column-gap: 0.8rem;
-            row-gap: 0.8rem;
             padding: 0;
+            row-gap: 0.8rem;
+            width: 100%;
             input:nth-child(10) { 
               grid-column: 2/3;
               grid-row: 4/5;
@@ -103,21 +103,21 @@ body {
             input[type=button] {
               background-color:$normal_Cyan;
               border-color: $normal_Cyan;
-              border-width: 2px;
-              color: white;
-              box-shadow: 1px 1px 1px 1px black;
               border-radius: 1rem;
+              border-width: 2px;
+              box-shadow: 1px 1px 1px 1px black;
+              color: white;
               font-size: 2rem;
-              width: 100%;
               height: 100%;
+              width: 100%;
             }
           }
         }
 
         div.checks-buttons {
-          margin-top: 1rem;
           display: flex;
           justify-content: space-around;
+          margin-top: 1rem;
           
         }
       }
@@ -126,14 +126,14 @@ body {
         @include center-flex;
         div.clock {
           @include center-flex;
-          gap: 2rem;
-          width: 45rem;
-          height: 30rem;
           background-color: $very_Dark_Cyan;
-          color: white;
-          text-align: center;
-          font-size: 8rem;
           border-radius: 1rem;
+          color: white;
+          font-size: 8rem;
+          gap: 2rem;
+          height: 30rem;
+          text-align: center;
+          width: 45rem;
         }
 
         button {

@@ -1,12 +1,10 @@
 <div id="<%= dom_id branch %>">
-  <p>
-    <strong>Name:</strong>
-    <%= branch.name %>
-  </p>
-
-  <p>
-    <strong>Address:</strong>
-    <%= branch.address %>
-  </p>
+  <tbody>
+    <tr>
+      <td><%= branch.name %></td>
+      <td><%= branch.address %></td>
+      <td><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash-can"></i></td>
+    </tr>
+  </tbody>
 
 </div>

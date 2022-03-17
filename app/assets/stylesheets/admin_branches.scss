@@ -1,0 +1,142 @@
+$primaryColor: #AEFEFF;
+$very_pale_cyan: #4FBDBA;
+$very_Dark_Cyan: #0e3c44;
+$normal_Cyan: #35858B;
+
+@mixin center-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center-grid {
+  display: grid;
+  place-items: center;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: $normal_Cyan;
+  padding: 3rem;
+  @include center-grid;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Quicksand', sans-serif;
+  div.container {
+    background-color: $very_pale_cyan;
+    border-radius: 1rem;
+    width: 95%;
+    height: 90%;
+    box-shadow: 1px 1px 10px 1px black;
+  
+  }
+}
+
+.subcontainer{
+  width: 80%;
+  margin: 0 10%;
+}
+
+.button_cont{
+  display: flex;
+  justify-content: right;
+  margin-top: 15px;
+  .button {
+    background-color: $primaryColor;
+    border-color: $primaryColor;
+    color: $very_Dark_Cyan;
+    font-size: 2.5rem;
+    width: auto;
+    padding: 0 1.5rem;
+    height: 3rem;
+    border-radius: 15px;
+    border-width: 2px;
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.table{
+  margin: none;
+  padding-top: 15px;
+  width: 100%;
+  height: 100%;
+  border-spacing: 2px;
+  font-size: 15px;
+
+  td{
+    border: solid 1px black;
+    max-width: 100%;
+    background-color: $very_Dark_Cyan;
+    color: rgb(214, 202, 202);
+    text-align: center;
+    border-collapse: collapse;
+    
+  }
+
+  th{
+    background-color: $very_Dark_Cyan;
+    color: rgb(214, 202, 202);
+    padding: 10px 15px;
+    height: 8px;
+  }
+
+  th:nth-child(3){
+    width: 10%;
+  }
+ 
+  th:nth-child(1){
+    width: 35%;
+  }
+}
+
+.search{
+  display: flex;
+  justify-content: right;
+
+  input{
+    background-color: $very_Dark_Cyan;
+    border-radius: 15px;
+    height: 2.5rem;
+    width: 22%;
+  }
+  
+  input::placeholder { 
+    color: rgb(214, 202, 202);
+    padding-left: 10px;
+  }
+  
+}
+
+
+nav {
+  margin: 20px;
+  background-color: $very_Dark_Cyan;
+  color: white;
+  font-size: 30px;
+  border-radius: 20px;
+
+  p{
+    padding: 0 20px;
+  }
+}
+
+i {
+  color: black;
+}
+
+.fa-solid {
+    margin: 5px;
+}

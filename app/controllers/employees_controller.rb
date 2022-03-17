@@ -1,5 +1,4 @@
 class EmployeesController < ApplicationController
-  layout "checking", only: [:check, :index]
   before_action :set_employee, only: %i[ show edit update destroy ]
 
   # GET /employees or /employees.json

@@ -1,33 +1,26 @@
 <p style="color: green"><%= notice %></p>
-
-  <nav>
-    <p></p>FOO CORP</p>
-  </nav>
-
-  <div class="subcontainer">
-    <div class="search">
-      <input type="text" placeholder="#Search">
-    </div>
-  
-
-<table class="table">
-  <thead>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Position</th>
-    <th>#</th>
-    <th>Private <br> number</th>
-    <th>Branch</th>
-    <th>Active</th>
-    <th> </th>
-  </thead> 
-
-  
+<nav>
+  <p></p>FOO CORP</p>
+</nav>
+<div class="subcontainer">
+  <div class="search">
+    <input type="text" placeholder="#Search">
+</div>
+  <table class="table">
+    <thead>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Position</th>
+      <th>#</th>
+      <th>Private <br> number</th>
+      <th>Branch</th>
+      <th>Active</th>
+      <th> </th>
+    </thead> 
     <% @employees.each do |employee| %>
       <%= render employee %>
     <% end %>
-  
-</table>
+  </table>
   <div class="button_cont">
     <%= button_to '+', new_employee_path, method: :get, class: 'button' %>
   </div>

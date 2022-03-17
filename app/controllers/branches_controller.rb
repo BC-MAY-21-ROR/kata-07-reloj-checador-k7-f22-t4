@@ -1,11 +1,6 @@
 class BranchesController < ApplicationController
-<<<<<<< HEAD
   before_action :set_branch, only: %i[show edit update destroy]
   before_action :authenticate_admin!
-=======
-  layout "show_branches", only: [:index]
-  before_action :set_branch, only: %i[ show edit update destroy ]
->>>>>>> Create a view of branches for admin
 
   # GET /branches or /branches.json
   def index

@@ -1,16 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
-$primaryColor: #AEFEFF;
-$very_pale_cyan: #4FBDBA;
-$very_Dark_Cyan: #072227;
-$normal_Cyan: #35858B;
+@import "sass/abstracts/variables";
 
 .navbar {
   background-color: $very_Dark_Cyan;
   border-radius: 50px;
   clear: both;
   color: white;
-  font-family: 'Quicksand', sans-serif;
+  font-family: $font-stack;
   overflow: auto;
 
   .logo {

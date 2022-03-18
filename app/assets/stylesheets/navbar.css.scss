@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
-@import "sass/abstracts/variables";
+@import "sass/main";
 
 .navbar {
-  background-color: $very_Dark_Cyan;
+  background-color: $very-dark-cyan;
   border-radius: 50px;
   clear: both;
   color: white;
@@ -49,7 +49,7 @@
     text-decoration: none;
   }
   a:hover {
-    color: $normal_Cyan;
+    color: $normal-cyan;
     cursor: pointer;
   }
 }

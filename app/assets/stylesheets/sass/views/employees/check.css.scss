@@ -9,11 +9,11 @@
 }
 
 .primary-button {
-  background-color: $primaryColor;
-  border-color: $primaryColor;
+  background-color: $primary-color;
+  border-color: $primary-color;
   border-radius: 15px;
   border-width: 2px;
-  color: $very_Dark_Cyan;
+  color: $very-dark-cyan;
   font-size: 2.5rem;
   height: 4rem;
   padding: 0 1.5rem;
@@ -21,7 +21,7 @@
 }
 
 body {
-  background-color: $normal_Cyan; 
+  background-color: $normal-cyan; 
   display: grid;
   font-family: $font-stack;
   height: 100vh;
@@ -40,7 +40,7 @@ body {
 
     header {
       .logo {
-        background-color:$very_Dark_Cyan;
+        background-color:$very-dark-cyan;
         border-radius: 2rem;
         padding: 1rem;
         text-align: center;
@@ -64,7 +64,7 @@ body {
       div.check {
         
         div.numeric-pad {
-          background-color: $very_Dark_Cyan;
+          background-color: $very-dark-cyan;
           border-radius: 1rem;
           display: flex;
           flex-direction: column;
@@ -74,7 +74,7 @@ body {
           width: 25rem;
           
           div.screen {
-            background-color: $normal_Cyan;
+            background-color: $normal-cyan;
             border-radius: 1.3rem;
             color: white;
             font-size: 7rem;
@@ -101,8 +101,8 @@ body {
               grid-row: 4/5;
             }
             input[type=button] {
-              background-color:$normal_Cyan;
-              border-color: $normal_Cyan;
+              background-color:$normal-cyan;
+              border-color: $normal-cyan;
               border-radius: 1rem;
               border-width: 2px;
               box-shadow: 1px 1px 1px 1px black;
@@ -126,7 +126,7 @@ body {
         @include center-flex;
         div.clock {
           @include center-flex;
-          background-color: $very_Dark_Cyan;
+          background-color: $very-dark-cyan;
           border-radius: 1rem;
           color: white;
           font-size: 8rem;

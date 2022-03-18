@@ -6,22 +6,22 @@ $very_Dark_Cyan: #072227;
 $normal_Cyan: #35858B;
 
 .navbar {
-  clear: both;
-  overflow: auto;
   background-color: $very_Dark_Cyan;
   border-radius: 50px;
-  font-family: 'Quicksand', sans-serif;
+  clear: both;
   color: white;
+  font-family: 'Quicksand', sans-serif;
+  overflow: auto;
 
   .logo {
-    margin-left: 20px;
+    align-items: center;
+    float: left;
     font-size: 32px;
     font-weight: bold;
-    text-align: center;
-    float: left;
-    padding: 10px;
     justify-content: center;
-    align-items: center;
+    margin-left: 20px;
+    padding: 10px;
+    text-align: center;
   }
 
   nav {

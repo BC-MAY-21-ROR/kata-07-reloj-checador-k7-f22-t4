@@ -1,4 +1,4 @@
-@import '../../abstracts/*';
+@import '../../main.css.scss';
 
 * {
   box-sizing: border-box;
@@ -27,12 +27,12 @@ body {
   }
 }
 
-.subcontainer{
+.subcontainer {
   margin: 0 10%;
   width: 80%;
 }
 
-.button_cont{
+.button_cont {
   display: flex;
   justify-content: right;
   margin-top: 15px;
@@ -76,6 +76,14 @@ body {
     height: 8px;
     padding: 10px 15px;
   }
+
+  th:nth-child(3) {
+    width: 10%;
+  }
+ 
+  th:nth-child(1) {
+    width: 35%;
+  }
 }
 
 .search {
@@ -92,9 +100,8 @@ body {
   input::placeholder { 
     color: rgb(214, 202, 202);
     padding-left: 10px;
-  } 
+  }
 }
-
 
 nav {
   background-color: $very-dark-cyan;
@@ -110,4 +117,8 @@ nav {
 
 i {
   color: black;
+}
+
+.fa-solid {
+  margin: 5px;
 }

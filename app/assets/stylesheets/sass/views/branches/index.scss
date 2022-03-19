@@ -13,13 +13,13 @@ html {
 
 body {
   @include center-grid;
-  background-color: $normal_Cyan;
+  background-color: $normal-cyan;
   height: 100vh;
   padding: 3rem;
   width: 100vw;
 
   div.container {
-    background-color: $very_pale_cyan;
+    background-color: $very-pale-cyan;
     border-radius: 1rem;
     box-shadow: 1px 1px 10px 1px black;
     height: 90%;
@@ -39,11 +39,11 @@ body {
 
   .button {
     align-items: center;
-    background-color: $primary_Color;
-    border-color: $primary_Color;
+    background-color: $primary-color;
+    border-color: $primary-color;
     border-radius: 15px;
     border-width: 2px;
-    color: $very_Dark_Cyan;
+    color: $very-dark-cyan;
     display: flex;
     flex-direction: column-reverse;
     font-size: 2.5rem;
@@ -62,7 +62,7 @@ body {
   width: 100%;
 
   td {
-    background-color: $very_Dark_Cyan;
+    background-color: $very-dark-cyan;
     border-collapse: collapse;
     border: solid 1px black;
     color: rgb(214, 202, 202);
@@ -71,7 +71,7 @@ body {
   }
 
   th {
-    background-color: $very_Dark_Cyan;
+    background-color: $very-dark-cyan;
     color: rgb(214, 202, 202);
     height: 8px;
     padding: 10px 15px;
@@ -91,7 +91,7 @@ body {
   justify-content: right;
 
   input {
-    background-color: $very_Dark_Cyan;
+    background-color: $very-dark-cyan;
     border-radius: 15px;
     height: 2.5rem;
     width: 22%;
@@ -104,7 +104,7 @@ body {
 }
 
 nav {
-  background-color: $very_Dark_Cyan;
+  background-color: $very-dark-cyan;
   border-radius: 20px;
   color: white;
   font-size: 30px;

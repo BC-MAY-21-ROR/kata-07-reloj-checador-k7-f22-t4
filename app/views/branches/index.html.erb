@@ -1,12 +1,11 @@
-<p style="color: green"><%= notice %></p>
 <nav>
-  <p></p>FOO CORP</p>
+  <p>FOO CORP</p>
 </nav>
-<div class="subcontainer">
+<div class="sub-container">
   <div class="search">
     <input type="text" placeholder="#Search">
   </div>
-  <table class="table">
+  <table class="table branches-table">
     <thead>
       <th>Name</th>
       <th>Address</th>
@@ -16,7 +15,7 @@
       <%= render branch %>
     <% end %>
   </table>
-  <div class="button_cont">
+  <div class="button-cont">
     <%= button_to '+', new_branch_path, method: :get, class: 'button' %>
   </div>
 </div>

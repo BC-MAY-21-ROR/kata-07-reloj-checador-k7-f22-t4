@@ -49,6 +49,17 @@
   width: auto;
 }
 
+.secundary-button {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  border-radius: 15px;
+  border-width: 2px;
+  color: $very-dark-cyan;
+  font-size: 1.3rem;
+  padding: 0.5rem 0.5rem;
+  width: auto;
+}
+
 .container {
   @include center-flex-column;
   background-color: $very-pale-cyan;

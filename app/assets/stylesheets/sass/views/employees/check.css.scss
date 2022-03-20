@@ -1,42 +1,6 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-.primary-button {
-  background-color: $primary-color;
-  border-color: $primary-color;
-  border-radius: 15px;
-  border-width: 2px;
-  color: $very-dark-cyan;
-  font-size: 2rem;
-  height: 4rem;
-  padding: 0 1.5rem;
-  width: auto;
-}
-
 body {
-  background-color: $normal-cyan; 
-  display: grid;
-  font-family: $font-stack;
-  height: 100vh;
-  padding: 3rem;
-  place-items: center;
-  width: 100vw;
 
-  div.container {
-    @include center-flex-column;
-    background-color: $very-pale-cyan;
-    border-radius: 1rem;
-    box-shadow: 1px 1px 10px 1px black;
-    gap: 3rem;
-    height: 90%;
-    width: 95%;
+  .container {
 
     header {
       .logo {
@@ -52,7 +16,6 @@ body {
           font-weight: 400;
         }
       }
-      
     }
 
     main {
@@ -91,14 +54,17 @@ body {
             padding: 0;
             row-gap: 0.8rem;
             width: 100%;
+
             input:nth-child(10) { 
               grid-column: 2/3;
               grid-row: 4/5;
             }
+
             input:nth-child(11) { 
               grid-column: 3/4;
               grid-row: 4/5;
             }
+
             input[type=button] {
               background-color:$normal-cyan;
               border-color: $normal-cyan;
@@ -122,6 +88,7 @@ body {
 
       div.right-side {
         @include center-flex-column;
+
         div.clock {
           @include center-flex-column;
           background-color: $very-dark-cyan;
@@ -137,7 +104,6 @@ body {
         button {
           margin-top: 1rem;
         }
-
       }
     }
   }

@@ -1,20 +1,20 @@
-<div class="new-admin-container">
+<div class="form-container">
   <figure class="profile-pic">
       <img src="https://www.pngarts.com/files/10/Default-Profile-Picture-PNG-Image-Background.png" alt="profile-picture">
   </figure>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= label_tag :email, '' %><br />
+      <%= f.label  :email %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Type your email" %>
     </div>
 
     <div class="field">
-      <%= label_tag :password, '' %><br />
+      <%= f.label  :password %>
       <%= f.password_field :password, autocomplete: "current-password", placeholder: "Type your password" %>
     </div>
 
     <% if devise_mapping.rememberable? %>
-      <div class="field">
+      <div class="field check-box-field">
         <%= f.check_box :remember_me %>
         <%= f.label :remember_me %>
       </div>

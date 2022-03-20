@@ -4,7 +4,6 @@ body {
     position: relative;
 
     .form-container {
-      @include center-flex-column;
 
       figure {
         @include center-grid;

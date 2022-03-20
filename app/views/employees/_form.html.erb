@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="field">
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :email, style: "display: block" %>
     <%= form.text_field :email %>
   </div>
 
-  <div>
+  <div class="field">
     <%= form.label :position, style: "display: block" %>
     <%= form.text_field :position %>
   </div>
@@ -31,18 +31,18 @@
     <%= form.text_field :private_code %>
   </div>
    -->
-  <div>
+  <div class="field">
     <%= form.label :active, style: "display: block" %>
     <%= form.check_box :active %>
   </div>
 
-  <div>
+  <div class="field">
      <%= form.label :branch_id, style: "display: block" %>
      <% branches_array = Branch.all.map { |branch| [branch.name, branch.id] } %>
      <%= form.select :branch_id, options_for_select(branches_array) %>
   </div>
   
-  <div>
-    <%= form.submit %>
+  <div class="actions">
+    <%= form.submit class: "primary-button"%>
   </div>
 <% end %>

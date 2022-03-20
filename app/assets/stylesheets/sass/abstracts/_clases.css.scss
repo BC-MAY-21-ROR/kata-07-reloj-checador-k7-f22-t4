@@ -13,10 +13,10 @@
     background-color: $very-dark-cyan;
     border-radius: 2rem;
     border: none;
-    padding: 0.8rem 1.2rem;
-    width: 100%;
     color: white;
     margin: 1rem 0;
+    padding: 0.8rem 1.2rem;
+    width: 100%;
   }
 
   input::placeholder {
@@ -26,11 +26,11 @@
 }
 
 .form-container {
-  width: 35rem;
-}
+  @include center-flex-column;
 
-.new_admin {
-  width: 100%;
+  form {
+    width: 35rem;
+  }
 }
 
 .actions {
@@ -56,25 +56,25 @@
   box-shadow: 1px 1px 10px 1px black;
   gap: 3rem;
   height: 90%;
-  width: 95%;
   position: relative;
+  width: 95%;
 }
 
 .check-box-field {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: left;
 
   input {
-    width: auto;
     margin-right: 1rem;
+    width: auto;
   }
 }
 
 .max-button {
-  width: 90%;
   font-size: 1.5rem;
+  width: 90%;
 }
 
 .links {
@@ -85,13 +85,13 @@
 }
 
 .notice, .alert{
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
   border-radius: 1rem;
   font-size: 2rem;
+  left: 0;
+  position: absolute;
   text-align: center;
+  top: 0;
+  width: 100%;
 }
 
 .alert {

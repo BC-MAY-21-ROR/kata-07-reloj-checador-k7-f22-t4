@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
-@import '../../abstracts/*';
-
 * {
   box-sizing: border-box;
   font-family: $font-stack;
@@ -32,7 +29,7 @@ body {
   width: 100vw;
 
   div.container {
-    @include center-flex;
+    @include center-flex-column;
     background-color: $very_pale_cyan;
     border-radius: 1rem;
     box-shadow: 1px 1px 10px 1px black;
@@ -40,8 +37,8 @@ body {
     position: relative;
     width: 95%;
 
-    div {
-      @include center-flex;
+    .new-admin-container {
+      @include center-flex-column;
       width: 35rem;
 
       figure {
@@ -56,7 +53,8 @@ body {
         }
       }
 
-      form {
+      .new_admin {
+        width: 100%;
 
         div {
           margin-top: 1rem;
@@ -64,13 +62,25 @@ body {
 
         .field {
           width: 100%;
-  
+          display: flex;
+          align-items: center;
+          
+          label {
+            font-size: 1.5rem;
+          }
+
           input {
             background-color: $very-dark-cyan;
             border-radius: 2rem;
             border: none;
             padding: 0.8rem 1.2rem;
             width: 100%;
+            color: white;
+          }
+
+          input[type=checkbox] {
+            width: auto;
+            margin-right: 1rem;
           }
   
           input::placeholder {
@@ -78,18 +88,25 @@ body {
             font-size: 1.5rem;
           }
         }
+
+        .actions {
+          @include center-grid;
+        }
       }
 
       a {
-        color: $very-dark-cyan;
-        font-size: 2rem;
-        margin-top: 1rem;
+        color: $normal-cyan;
+        font-size: 1.5rem;
         text-align: left;
         width: 100%;
       }
+
+      a:hover {
+        color: $very-dark-cyan;
+      }
     }
 
-    button {
+    .back-home-button {
       bottom: 1rem;
       position: absolute;
       right: 1rem;

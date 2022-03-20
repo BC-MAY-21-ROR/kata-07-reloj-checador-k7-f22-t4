@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
-@import '../../abstracts/*';
-
 * {
   box-sizing: border-box;
-  font-size: 62.5%;
   margin: 0;
   padding: 0;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 .primary-button {
@@ -14,7 +14,7 @@
   border-radius: 15px;
   border-width: 2px;
   color: $very-dark-cyan;
-  font-size: 2.5rem;
+  font-size: 2rem;
   height: 4rem;
   padding: 0 1.5rem;
   width: auto;
@@ -30,8 +30,8 @@ body {
   width: 100vw;
 
   div.container {
-    @include center-flex;
-    background-color: $very_pale_cyan;
+    @include center-flex-column;
+    background-color: $very-pale-cyan;
     border-radius: 1rem;
     box-shadow: 1px 1px 10px 1px black;
     gap: 3rem;
@@ -48,9 +48,8 @@ body {
         
         h1 {
           color: white;
-          font-size: 8rem;
+          font-size: 6rem;
           font-weight: 400;
-          
         }
       }
       
@@ -77,7 +76,7 @@ body {
             background-color: $normal-cyan;
             border-radius: 1.3rem;
             color: white;
-            font-size: 7rem;
+            font-size: 4rem;
             height: auto;
             padding-right: 0.4rem;
             text-align: right;
@@ -118,18 +117,17 @@ body {
           display: flex;
           justify-content: space-around;
           margin-top: 1rem;
-          
         }
       }
 
       div.right-side {
-        @include center-flex;
+        @include center-flex-column;
         div.clock {
-          @include center-flex;
+          @include center-flex-column;
           background-color: $very-dark-cyan;
           border-radius: 1rem;
           color: white;
-          font-size: 8rem;
+          font-size: 5rem;
           gap: 2rem;
           height: 30rem;
           text-align: center;

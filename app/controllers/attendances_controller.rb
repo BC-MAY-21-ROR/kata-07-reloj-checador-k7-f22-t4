@@ -1,5 +1,6 @@
 class AttendancesController < ApplicationController
-  before_action :set_attendance, only: %i[ show edit update destroy ]
+  before_action :set_attendance, only: %i[show edit update destroy]
+  before_action :authenticate_admin!
 
   # GET /attendances or /attendances.json
   def index

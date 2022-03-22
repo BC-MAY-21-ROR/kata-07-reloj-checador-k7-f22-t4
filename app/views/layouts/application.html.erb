@@ -6,12 +6,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "sass/views/#{params[:controller]}/#{params[:action]}", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "sass/main", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
     <div class="container">
+      <% if notice %>
+      <p class="notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
       <%= yield %>
     </div>
   </body>

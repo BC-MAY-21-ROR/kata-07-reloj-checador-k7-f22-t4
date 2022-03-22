@@ -1,0 +1,116 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  label {
+    color: $very-dark-cyan;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  input {
+    background-color: $very-dark-cyan;
+    border-radius: 2rem;
+    border: none;
+    color: white;
+    margin: 1rem 0;
+    padding: 0.8rem 1.2rem;
+    width: 100%;
+  }
+
+  input::placeholder {
+    color: $primary-color;
+    font-size: 1.5rem;
+  }
+}
+
+.form-container {
+  @include center-flex-column;
+
+  form {
+    width: 35rem;
+  }
+}
+
+.actions {
+  @include center-grid;
+}
+
+.primary-button {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  border-radius: 15px;
+  border-width: 2px;
+  color: $very-dark-cyan;
+  font-size: 2rem;
+  height: 4rem;
+  padding: 0 1.5rem;
+  width: auto;
+}
+
+.secundary-button {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  border-radius: 15px;
+  border-width: 2px;
+  color: $very-dark-cyan;
+  font-size: 1.3rem;
+  padding: 0.5rem 0.5rem;
+  width: auto;
+}
+
+.container {
+  @include center-flex-column;
+  background-color: $very-pale-cyan;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 10px 1px black;
+  gap: 3rem;
+  height: 90%;
+  position: relative;
+  width: 95%;
+}
+
+.check-box-field {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+
+  input {
+    margin-right: 1rem;
+    width: auto;
+  }
+}
+
+.max-button {
+  font-size: 1.5rem;
+  width: 90%;
+}
+
+.links {
+  align-self: baseline;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.notice, .alert{
+  border-radius: 1rem;
+  font-size: 2rem;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
+
+.alert {
+  background-color: rgba(250, 140, 140, 0.658);
+  border: 1px solid rgb(250, 140, 140);
+}
+
+.notice {
+  background-color: rgba(175, 250, 140, 0.658);
+  border: 1px solid rgb(175, 250, 140);
+}

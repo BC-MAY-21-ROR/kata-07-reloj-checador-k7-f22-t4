@@ -1,10 +1,11 @@
 .navbar {
   background-color: $very-dark-cyan;
-  border-radius: 50px;
+  border-radius: 5rem;
   color: white;
   display: flex;
   font-family: $font-stack;
   justify-content: space-between;
+  width: 90%;
 
   ul {
     list-style: none;
@@ -15,20 +16,18 @@
     justify-content: space-between;
 
     .logo {
-      align-items: center;
+      @include center-flex-row;
       float: left;
-      font-size: 32px;
+      font-size: 2.5rem;
       font-weight: bold;
-      justify-content: center;
-      margin-left: 20px;
-      padding: 10px;
+      margin-left: 2rem;
+      padding: 1rem;
       text-align: center;
     }
 
     .views-links {
       align-items: center;
       display: flex;
-      font-size: 1rem;
       margin-right: 30px;
       
       ul {
@@ -37,13 +36,19 @@
         padding: 0;
 
         li {
-          margin-left: 15px;
+          margin-left: 1.5rem;
+
+          a {
+            font-size: 1.2rem;
+          }
         }
       }
     }
   }
 
   .right-nav {
+    align-items: center;
+    display: flex;
 
     li {
       font-size: 1.5rem;

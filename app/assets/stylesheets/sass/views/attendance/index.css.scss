@@ -1,0 +1,144 @@
+.sub-container {
+  height: 100%;
+  margin: 5% 5%;
+  width: 80%;
+ 
+  .search-row {
+    display: flex;
+    justify-content: space-between;
+    .month-option {
+      align-items: center;
+      background-color: $very-dark-cyan;
+      border-radius: 15px;
+      color: white;
+      display: flex;
+      font-size: 18px;
+      height: 2rem;
+      justify-content: center;
+      width: 33%;
+
+      select {
+        background-color: $normal-cyan;
+        height: 20px;
+        width: 30px;
+      }
+    }      
+  }
+
+  .search {
+
+    input {
+      background-color: $very-dark-cyan;
+      border-radius: 15px;
+      height: 2.5rem;
+      width: 75%;
+    }
+
+    input::placeholder { 
+      color: rgb(214, 202, 202);
+      padding-left: 10px;
+    }
+  }
+    
+ 
+  .table {
+    border-spacing: 2px;
+    font-size: 15px;
+    margin: none;
+    padding-top: 15px;
+    width: 100%;
+ 
+    td {
+      background-color: $very-dark-cyan;
+      border-collapse: collapse;
+      border: solid 1px black;
+      color: rgb(214, 202, 202);
+      max-width: 100%;
+      text-align: center;
+    }
+ 
+    th {
+      background-color: $very-dark-cyan;
+      color: rgb(214, 202, 202);
+      height: 8px;
+      padding: 10px 15px;
+    }
+  }
+}
+ 
+nav {
+  background-color: $very-dark-cyan;
+  border-radius: 20px;
+  color: white;
+  font-size: 30px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+ 
+  p {
+    padding: 0 20px;
+  }
+}
+
+.section {
+  width: 33%;
+}
+
+.father-table {
+  display: flex;
+  height: 100%;
+}
+
+.month {
+  align-items: center;
+  background-color: $very-dark-cyan;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 160px;
+}
+
+.average-box {
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  height: 100%;
+  justify-content: center;
+}
+
+.average {
+  align-items: center;
+  background-color: $very-dark-cyan;
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+  width: 160px;
+}
+
+.total-absence {
+  display: flex;
+  height: 25px;
+  justify-content: space-around;
+  width: 66%;
+  
+  p {
+    background-color: $very-dark-cyan;
+    border-radius: 15px;
+    color: white;
+    font-size: 15px;
+    margin-left: 100px;
+    padding-left: 5px;
+    width: 30%;
+  }
+}
+ 

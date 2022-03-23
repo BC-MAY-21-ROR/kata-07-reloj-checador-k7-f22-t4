@@ -1,7 +1,5 @@
 body {
-
   div.container {
-
     div {
       @include center-flex-column;
       width: 35rem;
@@ -19,7 +17,6 @@ body {
       }
 
       form {
-
         div {
           margin-top: 1rem;
         }

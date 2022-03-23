@@ -27,21 +27,19 @@
           </div> 
       </div>
       <div class="checks-buttons">
-        <%= form.submit 'CHECK', class:"primary-button"%>
+        <%= form.submit 'Check', class:"primary-button"%>
       </div>
     <% end %>
   </div>
   <div class="right-side">
     <div class="clock">
-      <p id="MyClockDisplay" onload="showTim()"></p>
+      <p id="my-clock-display"></p>
       <p><%= I18n.l(Date.today, format: '%A') %></p>
       <p><%= I18n.l(Date.today, format: '%d / %B / %Y') %></p>
     </div>
-    <%= button_to 'Admin', log_in_path, method: :get, class:"primary-button" %>
-    <%= button_to 'Sign out', destroy_admin_session_path, method: :delete, class:"primary-button" %>
-  </div>
+      <%= button_to 'Admin', log_in_path, method: :get, class:"primary-button" %>
+      <%= button_to 'Sign out', destroy_admin_session_path, method: :delete, class:"primary-button" %>
+    </div>  
   </div>
 </main>
-<footer>
-  <%= javascript_include_tag 'attendances' %>
-</footer>
+<%= javascript_include_tag 'attendances' %>

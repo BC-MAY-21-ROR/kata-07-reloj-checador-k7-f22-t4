@@ -36,8 +36,8 @@ function showTime(){
   second = (second < 10) ? "0" + second : second;
 
   var time = hour + ":" + month + ":" + second + " " + session;
-  document.getElementById("MyClockDisplay").innerText = time;
-  document.getElementById("MyClockDisplay").textContent = time;
+  document.getElementById("my-clock-display").innerText = time;
+  document.getElementById("my-clock-display").textContent = time;
 
   setTimeout(showTime, 1000);
 }

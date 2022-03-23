@@ -1,6 +1,6 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: %i[show edit update destroy]
-  before_action :authenticate_admin!, except: [:new, :create]
+  before_action :authenticate_admin!, except: %i[new create]
 
   # GET /attendances or /attendances.json
   def index
@@ -16,7 +16,8 @@ class AttendancesController < ApplicationController
     @attendance = Attendance.new
   end
 
-  def check; end
+  def check
+  end
 
   # POST /attendances or /attendances.json
   def create
@@ -43,10 +44,10 @@ class AttendancesController < ApplicationController
     new_atte = { check_in: DateTime.now, employee_id: @employee.id }
     @attendance = Attendance.new(new_atte)
     respond_to do |format|
-      if @attendance.save then 
-       format.html { redirect_to new_attendance_path, notice: 'CHECK IIIINNN' }
+      if @attendance.save
+        format.html { redirect_to new_attendance_path, notice: 'CHECK IN' }
       else
-       format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new, status: :unprocessable_entity }
       end
     end
   end
@@ -55,7 +56,7 @@ class AttendancesController < ApplicationController
     @attendance = @employee.attendances.last
     respond_to do |format|
       if @attendance.update(check_out: DateTime.now)
-        format.html { redirect_to new_attendance_path, notice: 'CHECK OOOUUUTT' }
+        format.html { redirect_to new_attendance_path, notice: 'CHECK OUT' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end

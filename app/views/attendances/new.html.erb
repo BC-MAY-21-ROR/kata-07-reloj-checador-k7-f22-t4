@@ -9,7 +9,7 @@
       <div class="numeric-pad">
           <div class="screen">
             <%= label_tag :employee_id, '' %>
-            <%= form.password_field :employee_id, maxlength:"6" %>
+            <%= form.password_field :employee_id, maxlength: '6' %>
           </div>
           <div class="numbers-button">
             <input type="button" value="1" onclick="addCode('1')">
@@ -27,7 +27,7 @@
           </div> 
       </div>
       <div class="checks-buttons">
-        <%= form.submit 'Check', class:"primary-button"%>
+        <%= form.submit 'Check', class: 'primary-button' %>
       </div>
     <% end %>
   </div>
@@ -37,8 +37,8 @@
       <p><%= I18n.l(Date.today, format: '%A') %></p>
       <p><%= I18n.l(Date.today, format: '%d / %B / %Y') %></p>
     </div>
-      <%= button_to 'Admin', log_in_path, method: :get, class:"primary-button" %>
-      <%= button_to 'Sign out', destroy_admin_session_path, method: :delete, class:"primary-button" %>
+      <%= button_to 'Admin', log_in_path, method: :get, class: 'primary-button' %>
+      <%= button_to 'Sign out', destroy_admin_session_path, method: :delete, class: 'primary-button' %>
     </div>  
   </div>
 </main>

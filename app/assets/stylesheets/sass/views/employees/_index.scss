@@ -1,0 +1,90 @@
+.sub-container {
+  height: 100%;
+  margin: 10% 10%;
+  width: 80%;
+
+  .search {
+    display: flex;
+    justify-content: right;
+  
+    input {
+      background-color: $very-dark-cyan;
+      border-radius: 15px;
+      height: 2.5rem;
+      width: 22%;
+    }
+    
+    input::placeholder { 
+      color: rgb(214, 202, 202);
+      padding-left: 10px;
+    }
+  }
+
+  .table {
+    border-spacing: 2px;
+    font-size: 15px;
+    margin: none;
+    padding-top: 15px;
+    width: 100%;
+  
+    td {
+      background-color: $very-dark-cyan;
+      border-collapse: collapse;
+      border: solid 1px black;
+      color: rgb(214, 202, 202);
+      max-width: 100%;
+      text-align: center;
+    }
+  
+    th {
+      background-color: $very-dark-cyan;
+      color: rgb(214, 202, 202);
+      height: 8px;
+      padding: 10px 15px;
+    }
+
+    i {
+      color: $primary-color;
+    }
+  }
+
+  .button-cont {
+    display: flex;
+    justify-content: right;
+    margin-top: 15px;
+  
+    .button {
+      align-items: center;
+      background-color: $primary-color;
+      border-color: $primary-color;
+      border-radius: 15px;
+      border-width: 2px;
+      color: $very-dark-cyan;
+      display: flex;
+      flex-direction: column-reverse;
+      font-size: 2.5rem;
+      height: 3rem;
+      padding: 0 1.5rem;
+      width: auto;
+    }
+  }
+}
+
+nav {
+  background-color: $very-dark-cyan;
+  border-radius: 20px;
+  color: white;
+  font-size: 30px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  p {
+    padding: 0 20px;
+  }
+}
+
+.fa-solid {
+  margin: 5px;
+}

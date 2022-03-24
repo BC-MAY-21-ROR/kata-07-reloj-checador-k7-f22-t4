@@ -1,14 +1,26 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Employees</h1>
-
-<div id="employees">
-  <% @employees.each do |employee| %>
-    <%= render employee %>
-    <p>
-      <%= link_to "Show this employee", employee %>
-    </p>
-  <% end %>
+<nav>
+  <p>FOO CORP</p>
+</nav>
+<div class="sub-container">
+  <div class="search">
+    <input type="text" placeholder="#Search">
+  </div>
+  <table class="table">
+    <thead>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Position</th>
+      <th>#</th>
+      <th>Private <br> number</th>
+      <th>Branch</th>
+      <th>Active</th>
+      <th> </th>
+    </thead> 
+    <% @employees.each do |employee| %>
+      <%= render employee %>
+    <% end %>
+  </table>
+  <div class="button-cont">
+    <%= button_to '+', new_employee_path, method: :get, class: 'button' %>
+  </div>
 </div>
-
-<%= link_to "New employee", new_employee_path %>

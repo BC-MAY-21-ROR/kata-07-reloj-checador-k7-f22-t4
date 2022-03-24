@@ -1,14 +1,21 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Branches</h1>
-
-<div id="branches">
-  <% @branches.each do |branch| %>
-    <%= render branch %>
-    <p>
-      <%= link_to "Show this branch", branch %>
-    </p>
-  <% end %>
+<nav>
+  <p>FOO CORP</p>
+</nav>
+<div class="sub-container">
+  <div class="search">
+    <input type="text" placeholder="#Search">
+  </div>
+  <table class="table branches-table">
+    <thead>
+      <th>Name</th>
+      <th>Address</th>
+      <th></th>
+    </thead> 
+    <% @branches.each do |branch| %>
+      <%= render branch %>
+    <% end %>
+  </table>
+  <div class="button-cont">
+    <%= button_to '+', new_branch_path, method: :get, class: 'button' %>
+  </div>
 </div>
-
-<%= link_to "New branch", new_branch_path %>

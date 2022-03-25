@@ -1,32 +1,32 @@
-function addCode(key){
-  var code = document.getElementById("attendance_employee_id");
-  if(code.value.length < 6){
+const addCode = (key) => {
+  let code = document.getElementById("attendance_employee_id");
+  if(code.value.length < 6) {
     code.value = code.value + key;
   }
 }
 
-function deleteChar(){
-  var code = document.getElementById("attendance_employee_id");
+const deleteChar = () => {
+  let code = document.getElementById("attendance_employee_id");
   code.value = code.value.substring(0, code.value.length - 1);
 }
 
-function deleteCode(){
-  var code = document.getElementById("attendance_employee_id");
+const deleteCode = () => {
+  let code = document.getElementById("attendance_employee_id");
   code.value = "";
 }
 
-function showTime(){
-  var date = new Date();
-  var hour = date.getHours(); // 0 - 23
-  var month = date.getMinutes(); // 0 - 59
-  var second = date.getSeconds(); // 0 - 59
-  var session = "AM";
+const showTime = () => {
+  let date = new Date();
+  let hour = date.getHours(); // 0 - 23
+  let month = date.getMinutes(); // 0 - 59
+  let second = date.getSeconds(); // 0 - 59
+  let session = "AM";
 
-  if(hour == 0){
+  if (hour == 0) {
       hour = 12;
   }
 
-  if(hour > 12){
+  if (hour > 12) {
     hour = hour - 12;
     session = "PM";
   }
@@ -35,7 +35,7 @@ function showTime(){
   month = (month < 10) ? "0" + month : month;
   second = (second < 10) ? "0" + second : second;
 
-  var time = hour + ":" + month + ":" + second + " " + session;
+  let time = hour + ":" + month + ":" + second + " " + session;
   document.getElementById("my-clock-display").innerText = time;
   document.getElementById("my-clock-display").textContent = time;
 

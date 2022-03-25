@@ -5,6 +5,8 @@
   display: flex;
   font-family: $font-stack;
   justify-content: space-between;
+  position: absolute;
+  top: 1rem;
   width: 90%;
 
   ul {

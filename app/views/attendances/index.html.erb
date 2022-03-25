@@ -1,14 +1,86 @@
 <p style="color: green"><%= notice %></p>
+<nav>
+  <p>FOO CORP</p> 
+</nav>
+<div class="sub-container">
+  <div class=father-table>
+    <div class="section">
+      <div class="search-row">
+        <div class="search">
+         <input type="text" placeholder="#Search">
+        </div>
+       <div class = "month-option">
+          <label for="month-option">Month:</label>
+          <select name="month-option" id="">
+            <option value=""></option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select>
+        </div>
+      </div>
+      <table class="table">
+        <thead>
+          <th>Name</th>
+          <th>#</th>
+          <th>Absence</th>
+        </thead> 
+        <% @attendances.each do |attendance| %>
+        <%= render attendance %>
+        <% end %>
+      </table>
+    </div>
+ 
+  <div class="section">
+    <div class="search-row">
+      <div class="search">
+        <input type="text" placeholder="#Search">
+      </div>
+      <div class ="month-option">
+       <p>Date</p>
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <th>Name</th>
+        <th>#</th>
+        <th>IN</th>
+       <th>OUT</th>
+      </thead> 
+      <% @attendances.each do |attendance| %>
+      <%= render attendance %>
+      <% end %>
+    </table>
+  </div>
+  
+  <div class="section">
+    <div class="average-box">
+      <div class="month">
+        <p>Month</p>
+      </div>
+      <div class="average">
+        <p>Average Time (CI)</p>
+        <p class="time">00:00</p>
+      </div>
 
-<h1>Attendances</h1>
-
-<div id="attendances">
-  <% @attendances.each do |attendance| %>
-    <%= render attendance %>
-    <p>
-      <%= link_to "Show this attendance", attendance %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New attendance", new_attendance_path %>
+      <div class="average">
+        <p>Average Time (CO)</p>
+        <p class="time">00:00</p>
+      </div>
+      </div>
+    </div>
+    </div>
+    <div class="total-absence">
+      <p>Total absence:</p>
+      <p>Total absence:</p>
+    </div>
+  </div>

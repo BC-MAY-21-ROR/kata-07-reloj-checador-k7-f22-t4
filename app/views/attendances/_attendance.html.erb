@@ -1,17 +1,10 @@
 <div id="<%= dom_id attendance %>">
-  <p>
-    <strong>Check in:</strong>
-    <%= attendance.check_in %>
-  </p>
 
-  <p>
-    <strong>Check out:</strong>
-    <%= attendance.check_out %>
-  </p>
-
-  <p>
-    <strong>Employee:</strong>
-    <%= attendance.employee_id %>
-  </p>
-
+<tbody>
+    <tr>
+      <td><%= attendance.check_in %></td>
+      <td><%= attendance.check_out %></td>
+      <td><%= attendance.employee_id  %></td>
+    </tr>
+  </tbody>
 </div>

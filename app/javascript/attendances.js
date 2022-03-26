@@ -37,9 +37,8 @@ const showTime = () => {
 
   let time = hour + ":" + month + ":" + second + " " + session;
   document.getElementById("my-clock-display").innerText = time;
-  document.getElementById("my-clock-display").textContent = time;
 
-  setTimeout(showTime, 1000);
+  setInterval(showTime, 1000);
 }
 
 showTime();

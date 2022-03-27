@@ -1,29 +1,21 @@
 <div class="sub-container">
   <div class=father-table>
     <div class="section">
-      <div class="search-row">
-        <div class="search">
-         <input type="text" placeholder="#Search">
+      <form action="/attendances" class="search-row">
+        <div class="search field">
+          <label for="employee_id"></label>
+          <input type="text" placeholder="# Search" name="employee_id" id="employee_id">
         </div>
-        <div class = "month-option">
-          <label for="month-option">Month:</label>
-          <select name="month-option" id="">
-            <option value=""></option>
-            <option value="January">January</option>
-            <option value="February">February</option>
-            <option value="March">March</option>
-            <option value="April">April</option>
-            <option value="May">May</option>
-            <option value="June">June</option>
-            <option value="July">July</option>
-            <option value="August">August</option>
-            <option value="September">September</option>
-            <option value="October">October</option>
-            <option value="November">November</option>
-            <option value="December">December</option>
-          </select>
+        <div class="month-option field">
+          <label for="absence_month"></label>
+          <input type="month" name="absence_month" id="absence_month">
         </div>
-      </div>
+        <div class="field submit-icon">
+          <button type="submit" class="">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </form>
       <div class="table-wrapper">
       <div class="table-scroll">
         <table class="table ">
@@ -43,27 +35,23 @@
         </div>
       </div> 
     </div>
-    <div class="section">
-      <div class="search-row">
-        <div class="search">
-          <input type="text" placeholder="#Search">
-        </div>
-        <div class ="month-option">
-          <p>Date</p>
-        </div>
+ 
+  <div class="section">
+    <form action="/attendances" class="search-row">
+      <div class="search field">
+        <label for="employee_id"></label>
+        <input type="text" placeholder="# Search" name="employee_id" id="employee_id">
       </div>
-      <table class="table">
-        <thead>
-          <th>Name</th>
-          <th>#</th>
-          <th>IN</th>
-          <th>OUT</th>
-        </thead> 
-        <% @attendances.each do |attendance| %>
-        <%= render attendance %>
-        <% end %>
-      </table>
-    </div>
+      <div class="month-option field">
+        <label for="day"></label>
+        <input type="date" name="day" id="day">
+      </div>
+      <div class="field submit-icon">
+        <button type="submit" class="">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </form>
     <div class="table-wrapper">
       <div class="table-scroll">
         <table class="table ">
@@ -87,17 +75,25 @@
   
   <div class="averages">
     <div class="average-box">
-      <div class="month">
-        <p>Month</p>
-      </div>
+      <form action="/attendances" class="search-row">
+        <div class="month-option field">
+          <label for="avg_month"></label>
+          <input type="month" name="avg_month" id="avg_month">
+        </div>
+        <div class="field submit-icon">
+          <button type="submit" class="">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </form>
       <div class="average">
         <p>Average Time (CI)</p>
-        <p class="time">00:00</p>
+        <p class="time"><%= Attendance.average_check_in_time_by_month(@avg_month) %></p>
       </div>
 
       <div class="average">
         <p>Average Time (CO)</p>
-        <p class="time">00:00</p>
+        <p class="time"><%= Attendance.average_check_out_time_by_month(@avg_month) %></p>
       </div>
       </div>
     </div>

@@ -15,10 +15,10 @@ Employee.create(name: 'Aurelio Gómez', email: 'example@outlook.com', private_co
 Employee.create(name: 'Samuel De Luque', email: 'example@hotmail.com', private_code: '312315', branch_id: 1)
 Employee.create(name: 'Guillermo Diaz', email: 'example@live.com', private_code: '876543', branch_id: 1)
 
-3.times do |month| 
+7.times do |month| 
   4.times do |employee| 
     13.times do | day | 
-      Attendance.create(check_in: (Date.today - day.days - month.months), check_out: Date.today - day.days + 2.hours - month.months, employee_id: employee + 1)
+      Attendance.create(check_in: (DateTime.now - day.days - month.months), check_out: DateTime.now - day.days + 2.hours - month.months, employee_id: employee + 1)
     end
   end
 end

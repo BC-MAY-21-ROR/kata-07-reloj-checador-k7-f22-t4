@@ -5,7 +5,9 @@
   .search-row {
     display: flex;
     justify-content: space-between;
-
+    align-items: center;
+    width: 100%;
+    
     .month-option {
       align-items: center;
       background-color: $very-dark-cyan;
@@ -15,7 +17,7 @@
       font-size: 18px;
       height: 2rem;
       justify-content: center;
-      width: 33%;
+      width: 7rem;
 
       select {
         background-color: $normal-cyan;
@@ -133,10 +135,7 @@
 
 .table-item {
   width: 40rem;
-
-  thead > tr{
-  }
-
+  
   tbody {
     height: 60vh;
     overflow: auto;
@@ -164,4 +163,13 @@
   position: sticky;   
   top: 0;
   z-index:2;
+}
+
+.submit-icon {
+  width: auto;
+  
+  button {
+    background: none;
+    border: none;
+  }
 }

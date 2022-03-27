@@ -4,8 +4,9 @@ class AttendancesController < ApplicationController
 
   # GET /attendances or /attendances.json
   def index
-    @attendances = Attendance.attendance_by_day(Date.today - 1.days)
-    @absences = Attendance.absence_list(Date.today)
+    @attendances = Attendance.attendance_by_day(params[:day])
+    @absences = Attendance.absence_list("#{params[:absence_month]}-01")
+    @avg_month = "#{params[:avg_month]}-01"
   end
 
   # GET /attendances/1 or /attendances/1.json

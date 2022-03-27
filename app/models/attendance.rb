@@ -2,7 +2,7 @@ class Attendance < ApplicationRecord
   belongs_to :employee
 
   def self.attendance_by_day(day)
-    Attendance.all.where(check_in: Date.parse(day).beginning_of_day..Date.parse(day).end_of_day)
+    Attendance.all.where(check_in: day.beginning_of_day..day.end_of_day)
   end
 
   def self.average_check_in_time_by_month(date)
@@ -30,11 +30,7 @@ class Attendance < ApplicationRecord
   private
 
   def self.range(date)
-    Date.parse(date)...(Date.parse(date) + 1.months)
-  end
-
-  def self.parse_date(date)
-    Date.parse(date)
+    date...(date + 1.months)
   end
 
   def self.average(attendances_list)

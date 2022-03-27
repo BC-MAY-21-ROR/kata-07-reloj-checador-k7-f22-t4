@@ -1,6 +1,5 @@
 .sub-container {
   height: 100%;
-  margin: 5% 5%;
   width: 80%;
  
   .search-row {
@@ -67,7 +66,12 @@
 }
 
 .section {
-  width: 33%;
+  width: 40%;
+}
+
+.averages {
+  width: 20%;
+  margin-left: 0.5rem;
 }
 
 .father-table {
@@ -126,4 +130,38 @@
     width: 30%;
   }
 }
- 
+
+.table-item {
+  width: 40rem;
+
+  thead > tr{
+  }
+
+  tbody {
+    height: 60vh;
+    overflow: auto;
+    width: 100%;
+
+    tr:nth-child(1) {
+      width: 200px;
+    }
+  }
+}
+
+.table-wrapper {
+  position:relative;
+}
+.table-scroll {
+  max-height:60rem;
+  overflow:auto;  
+  margin-top:2rem;
+}
+.table-wrapper table {
+  width:100%;
+}
+
+.table-wrapper table thead tr {
+  position: sticky;   
+  top: 0;
+  z-index:2;
+}

@@ -4,7 +4,8 @@ class AttendancesController < ApplicationController
 
   # GET /attendances or /attendances.json
   def index
-    @attendances = Attendance.all
+    @attendances = Attendance.attendance_by_day(Date.today - 1.days)
+    @absences = Attendance.absence_list(Date.today)
   end
 
   # GET /attendances/1 or /attendances/1.json

@@ -24,16 +24,24 @@
           </select>
         </div>
       </div>
-      <table class="table">
-        <thead>
-          <th>Name</th>
-          <th>#</th>
-          <th>Absence</th>
-        </thead> 
-        <% @attendances.each do |attendance| %>
-        <%= render attendance %>
-        <% end %>
-      </table>
+      <div class="table-wrapper">
+      <div class="table-scroll">
+        <table class="table ">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>#</th>
+              <th>Absence</th>
+            </tr>
+          </thead>
+            <tbody>
+              <% @absences.each do |absence| %>
+                <%= render "attendances/absence", absence: absence %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div> 
     </div>
     <div class="section">
       <div class="search-row">
@@ -56,19 +64,41 @@
         <% end %>
       </table>
     </div>
-    <div class="section">
-      <div class="average-box">
-        <div class="month">
-          <p>Month</p>
-        </div>
-        <div class="average">
-          <p>Average Time (CI)</p>
-          <p class="time">00:00</p>
-        </div>
-        <div class="average">
-          <p>Average Time (CO)</p>
-          <p class="time">00:00</p>
-        </div>
+    <div class="table-wrapper">
+      <div class="table-scroll">
+        <table class="table ">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>#</th>
+              <th>IN</th>
+              <th>OUT</th>
+            </tr>
+          </thead>
+            <tbody>
+              <% @attendances.each do |attendance| %>
+              <%= render attendance %>
+              <% end %>
+            </tbody>
+        </table>
+      </div>
+    </div> 
+  </div>
+  
+  <div class="averages">
+    <div class="average-box">
+      <div class="month">
+        <p>Month</p>
+      </div>
+      <div class="average">
+        <p>Average Time (CI)</p>
+        <p class="time">00:00</p>
+      </div>
+
+      <div class="average">
+        <p>Average Time (CO)</p>
+        <p class="time">00:00</p>
+      </div>
       </div>
     </div>
   </div>

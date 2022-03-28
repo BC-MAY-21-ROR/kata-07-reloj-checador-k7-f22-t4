@@ -13,7 +13,7 @@ class Attendance < ApplicationRecord
     attendances = month_attendances(date)
     if attendances.length > 0
       check_in = attendances.map { |attendance| attendance.check_in }
-      Time.at(average(check_in)).strftime("%k:%M")
+      Time.at(average(check_in)).strftime('%k:%M')
     end 
   end
 
@@ -21,13 +21,13 @@ class Attendance < ApplicationRecord
     attendances = month_attendances(date)
     if attendances.length > 0
       check_out = attendances.map { |attendance| attendance.check_out }
-      Time.at(average(check_out)).strftime("%k:%M")
+      Time.at(average(check_out)).strftime('%k:%M')
     end
   end
 
   def self.absence_list(date, employee_id)
     absences = Array.new()
-    if employee_id && employee_id != "" && Employee.exists?(employee_id)
+    if employee_id && employee_id != '' && Employee.exists?(employee_id)
       absences << { absence: absence_by_month(date, employee_id), id: employee_id, name: Employee.find_by(id: employee_id).name } 
     else
       Employee.all.each { |employee| absences << { absence: absence_by_month(date, employee.id), id: employee.id, name: employee.name } }

@@ -1,9 +1,45 @@
-<h1>New attendance</h1>
-
-<%= render "form", attendance: @attendance %>
-
-<br>
-
-<div>
-  <%= link_to "Back to attendances", attendances_path %>
-</div>
+<header>
+    <div class="logo">
+      <h1>FOO CORP</h1>
+    </div>
+</header>
+<main>
+  <div class="check">
+    <%= form_with(model: @attendance) do |form| %>
+      <div class="numeric-pad">
+          <div class="screen">
+            <%= label_tag :employee_id, '' %>
+            <%= form.password_field :employee_id, maxlength: '6' %>
+          </div>
+          <div class="numbers-button">
+            <input type="button" value="1" onclick="addCode('1')">
+            <input type="button" value="2" onclick="addCode('2')">
+            <input type="button" value="3" onclick="addCode('3')">
+            <input type="button" value="4" onclick="addCode('4')">
+            <input type="button" value="5" onclick="addCode('5')">
+            <input type="button" value="6" onclick="addCode('6')">
+            <input type="button" value="7" onclick="addCode('7')">
+            <input type="button" value="8" onclick="addCode('8')">
+            <input type="button" value="9" onclick="addCode('9')">
+            <input type="button" value="0" onclick="addCode('0')">
+            <input type="button" value="◄" onclick="deleteChar()">
+            <input type="button" value="C" onclick="deleteCode()">
+          </div> 
+      </div>
+      <div class="checks-buttons">
+        <%= form.submit 'Check', class: 'primary-button' %>
+      </div>
+    <% end %>
+  </div>
+  <div class="right-side">
+    <div class="clock">
+      <p id="my-clock-display"></p>
+      <p><%= I18n.l(Date.today, format: '%A') %></p>
+      <p><%= I18n.l(Date.today, format: '%d / %B / %Y') %></p>
+    </div>
+      <%= button_to 'Admin', log_in_path, method: :get, class: 'primary-button' %>
+      <%= button_to 'Sign out', destroy_admin_session_path, method: :delete, class: 'primary-button' %>
+    </div>  
+  </div>
+</main>
+<%= javascript_include_tag 'attendances' %>

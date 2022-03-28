@@ -6,6 +6,7 @@
   .search-row {
     display: flex;
     justify-content: space-between;
+
     .month-option {
       align-items: center;
       background-color: $very-dark-cyan;
@@ -26,7 +27,6 @@
   }
 
   .search {
-
     input {
       background-color: $very-dark-cyan;
       border-radius: 15px;
@@ -63,21 +63,6 @@
       height: 8px;
       padding: 10px 15px;
     }
-  }
-}
- 
-nav {
-  background-color: $very-dark-cyan;
-  border-radius: 20px;
-  color: white;
-  font-size: 30px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
- 
-  p {
-    padding: 0 20px;
   }
 }
 

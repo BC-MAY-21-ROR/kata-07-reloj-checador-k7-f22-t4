@@ -3,8 +3,9 @@
 @import 'abstracts/variables';
 @import 'abstracts/clases';
 @import 'base/base';
+@import 'components/navbar';
 @import 'views/devise/sessions/new';
 @import 'views/branches/index';
 @import 'views/employees/index';
-@import 'components/navbar';
-@import 'views/attendance/index';
+@import 'views/attendances/new';
+@import 'views/attendances/index';

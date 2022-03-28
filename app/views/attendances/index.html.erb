@@ -1,7 +1,3 @@
-<p style="color: green"><%= notice %></p>
-<nav>
-  <p>FOO CORP</p> 
-</nav>
 <div class="sub-container">
   <div class=father-table>
     <div class="section">
@@ -9,7 +5,7 @@
         <div class="search">
          <input type="text" placeholder="#Search">
         </div>
-       <div class = "month-option">
+        <div class = "month-option">
           <label for="month-option">Month:</label>
           <select name="month-option" id="">
             <option value=""></option>
@@ -39,48 +35,45 @@
         <% end %>
       </table>
     </div>
- 
-  <div class="section">
-    <div class="search-row">
-      <div class="search">
-        <input type="text" placeholder="#Search">
+    <div class="section">
+      <div class="search-row">
+        <div class="search">
+          <input type="text" placeholder="#Search">
+        </div>
+        <div class ="month-option">
+          <p>Date</p>
+        </div>
       </div>
-      <div class ="month-option">
-       <p>Date</p>
-      </div>
+      <table class="table">
+        <thead>
+          <th>Name</th>
+          <th>#</th>
+          <th>IN</th>
+          <th>OUT</th>
+        </thead> 
+        <% @attendances.each do |attendance| %>
+        <%= render attendance %>
+        <% end %>
+      </table>
     </div>
-    <table class="table">
-      <thead>
-        <th>Name</th>
-        <th>#</th>
-        <th>IN</th>
-       <th>OUT</th>
-      </thead> 
-      <% @attendances.each do |attendance| %>
-      <%= render attendance %>
-      <% end %>
-    </table>
-  </div>
-  
-  <div class="section">
-    <div class="average-box">
-      <div class="month">
-        <p>Month</p>
+    <div class="section">
+      <div class="average-box">
+        <div class="month">
+          <p>Month</p>
+        </div>
+        <div class="average">
+          <p>Average Time (CI)</p>
+          <p class="time">00:00</p>
+        </div>
+        <div class="average">
+          <p>Average Time (CO)</p>
+          <p class="time">00:00</p>
+        </div>
       </div>
-      <div class="average">
-        <p>Average Time (CI)</p>
-        <p class="time">00:00</p>
-      </div>
-
-      <div class="average">
-        <p>Average Time (CO)</p>
-        <p class="time">00:00</p>
-      </div>
-      </div>
-    </div>
-    </div>
-    <div class="total-absence">
-      <p>Total absence:</p>
-      <p>Total absence:</p>
     </div>
   </div>
+  <div class="total-absence">
+    <p>Total absence:</p>
+    <p>Total absence:</p>
+  </div>
+</div>

@@ -1,7 +1,5 @@
 body {
-
   .container {
-
     header {
       .logo {
         background-color:$very-dark-cyan;
@@ -19,13 +17,13 @@ body {
     }
 
     main {
+      column-gap: 2rem;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       width: 80%;
 
-      div.check {
-        
-        div.numeric-pad {
+      .check {
+        .numeric-pad {
           background-color: $very-dark-cyan;
           border-radius: 1rem;
           display: flex;
@@ -35,18 +33,19 @@ body {
           padding: 1rem;
           width: 25rem;
           
-          div.screen {
-            background-color: $normal-cyan;
-            border-radius: 1.3rem;
-            color: white;
-            font-size: 4rem;
-            height: auto;
-            padding-right: 0.4rem;
-            text-align: right;
-            width: 100%;
+          .screen {
+            input[type=password] {
+              background: $normal-cyan;
+              border-radius: 1.3rem;
+              color: white;
+              font-size: 4rem;
+              padding-right: 0.4rem;
+              text-align: right;
+              width: 100%;
+            }
           }
 
-          div.numbers-button {
+          .numbers-button {
             column-gap: 0.8rem;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -79,17 +78,17 @@ body {
           }
         }
 
-        div.checks-buttons {
+        .checks-buttons {
           display: flex;
           justify-content: space-around;
           margin-top: 1rem;
         }
       }
 
-      div.right-side {
+      .right-side {
         @include center-flex-column;
 
-        div.clock {
+        .clock {
           @include center-flex-column;
           background-color: $very-dark-cyan;
           border-radius: 1rem;

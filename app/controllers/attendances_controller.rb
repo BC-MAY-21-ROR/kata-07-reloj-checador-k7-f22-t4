@@ -6,8 +6,8 @@ class AttendancesController < ApplicationController
   def index
     prueba = Date.today
     prueba =  Date.parse(params[:day]) if !params[:day].nil?
-    @attendances = Attendance.attendance_by_day(prueba)
-    @absences = Attendance.absence_list(Date.parse("#{params[:absence_month]}-01"))
+    @attendances = Attendance.attendance_by_day(prueba, params[:employee_id])
+    @absences = Attendance.absence_list(Date.parse("#{params[:absence_month]}-01"), params[:employee_id])
     @avg_month = Date.parse("#{params[:avg_month]}-01")
   end
 

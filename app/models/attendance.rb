@@ -1,8 +1,12 @@
 class Attendance < ApplicationRecord
   belongs_to :employee
 
-  def self.attendance_by_day(day)
-    Attendance.all.where(check_in: day.beginning_of_day..day.end_of_day)
+  def self.attendance_by_day(day, employee_id)
+    attd = Attendance.all.where(check_in: day.beginning_of_day..day.end_of_day)
+    if employee_id && employee_id != "" && Employee.exists?(employee_id)
+      attd = Attendance.all.where(check_in: day.beginning_of_day..day.end_of_day, employee_id: employee_id)
+    end
+    attd
   end
 
   def self.average_check_in_time_by_month(date)
@@ -21,9 +25,13 @@ class Attendance < ApplicationRecord
     end
   end
 
-  def self.absence_list(date)
+  def self.absence_list(date, employee_id)
     absences = Array.new()
-    Employee.all.each { |employee| absences << { absence: absence_by_month(date, employee.id), id: employee.id, name: employee.name } }
+    if employee_id && employee_id != "" && Employee.exists?(employee_id)
+      absences << { absence: absence_by_month(date, employee_id), id: employee_id, name: Employee.find_by(id: employee_id).name } 
+    else
+      Employee.all.each { |employee| absences << { absence: absence_by_month(date, employee.id), id: employee.id, name: employee.name } }
+    end
     return absences
   end
 

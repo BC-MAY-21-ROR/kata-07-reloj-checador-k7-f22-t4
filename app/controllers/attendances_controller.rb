@@ -20,7 +20,7 @@ class AttendancesController < ApplicationController
     @attendance = Attendance.new
   end
 
-  def check
+  def edit
   end
 
   # POST /attendances or /attendances.json

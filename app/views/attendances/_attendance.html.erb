@@ -2,7 +2,7 @@
   <tr>
     <td><%= Employee.name_by_id(attendance.employee_id) %></td>
     <td><%= attendance.employee_id %></td>
-    <td><%= Time.at(attendance.check_in.to_i).strftime('%d/%m/%Y - %H:%M') %></td>
-    <td><%= Time.at(attendance.check_out.to_i).strftime('%d/%m/%Y - %H:%M') %></td>
+    <td><%= attendance.check_in.localtime.strftime('%d/%m/%Y - %H:%M') %></td>
+    <td><%= attendance.check_out.strftime('%d/%m/%Y - %H:%M') if attendance.check_out %></td>
   </tr>
 </tbody>

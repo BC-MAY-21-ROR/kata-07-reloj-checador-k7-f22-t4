@@ -44,7 +44,7 @@ class Attendance < ApplicationRecord
   def self.average(attendances_list)
     check_in_average = 0
     if attendances_list.length > 0
-      attendances_list.each { |date| check_in_average += (date.to_time).to_i }
+      attendances_list.each { |date| (check_in_average += (date.to_time).to_i) if date}
       check_in_average /= attendances_list.length
     end
   end

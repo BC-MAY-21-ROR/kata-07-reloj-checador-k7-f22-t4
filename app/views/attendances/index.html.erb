@@ -1,5 +1,5 @@
 <div class="sub-container">
-  <div class=father-table>
+  <div class="father-table">
     <div class="section">
       <form action="/attendances" class="search-row">
         <div class="search field">
@@ -17,15 +17,15 @@
         </div>
       </form>
       <div class="table-wrapper">
-      <div class="table-scroll">
-        <table class="table ">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>#</th>
-              <th>Absence</th>
-            </tr>
-          </thead>
+        <div class="table-scroll">
+          <table class="table ">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>#</th>
+                <th>Absence</th>
+              </tr>
+            </thead>
             <tbody>
               <% @absences.each do |absence| %>
                 <%= render "attendances/absence", absence: absence %>
@@ -35,50 +35,15 @@
         </div>
       </div> 
     </div>
- 
-  <div class="section">
-    <form action="/attendances" class="search-row">
-      <div class="search field">
-        <label for="employee_id"></label>
-        <input type="text" placeholder="# Search" name="employee_id" id="employee_id">
-      </div>
-      <div class="month-option field">
-        <label for="day"></label>
-        <input type="date" name="day" id="day" value="<%= Date.today %>">
-      </div>
-      <div class="field submit-icon">
-        <button type="submit" class="">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </div>
-    </form>
-    <div class="table-wrapper">
-      <div class="table-scroll">
-        <table class="table ">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>#</th>
-              <th>IN</th>
-              <th>OUT</th>
-            </tr>
-          </thead>
-            <tbody>
-              <% @attendances.each do |attendance| %>
-              <%= render attendance %>
-              <% end %>
-            </tbody>
-        </table>
-      </div>
-    </div> 
-  </div>
-  
-  <div class="averages">
-    <div class="average-box">
+    <div class="section">
       <form action="/attendances" class="search-row">
+        <div class="search field">
+          <label for="employee_id"></label>
+          <input type="text" placeholder="# Search" name="employee_id" id="employee_id">
+        </div>
         <div class="month-option field">
-          <label for="avg_month"></label>
-          <input type="month" name="avg_month" id="avg_month">
+          <label for="day"></label>
+          <input type="date" name="day" id="day" value="<%= Date.today %>">
         </div>
         <div class="field submit-icon">
           <button type="submit" class="">
@@ -86,15 +51,47 @@
           </button>
         </div>
       </form>
-      <div class="average">
-        <p>Average Time (CI)</p>
-        <p class="time"><%= Attendance.average_check_in_time_by_month(@avg_month) %></p>
-      </div>
-
-      <div class="average">
-        <p>Average Time (CO)</p>
-        <p class="time"><%= Attendance.average_check_out_time_by_month(@avg_month) %></p>
-      </div>
+      <div class="table-wrapper">
+        <div class="table-scroll">
+          <table class="table ">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>#</th>
+                <th>IN</th>
+                <th>OUT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @attendances.each do |attendance| %>
+                <%= render attendance %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div> 
+    </div>
+    <div class="averages">
+      <div class="average-box">
+        <form action="/attendances" class="search-row">
+          <div class="month-option field">
+            <label for="avg_month"></label>
+            <input type="month" name="avg_month" id="avg_month">
+          </div>
+          <div class="field submit-icon">
+            <button type="submit" class="">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </form>
+        <div class="average">
+          <p>Average Time (CI)</p>
+          <p class="time"><%= Attendance.average_check_time_by_month(@avg_month, true) %></p>
+        </div>
+        <div class="average">
+          <p>Average Time (CO)</p>
+          <p class="time"><%= Attendance.average_check_time_by_month(@avg_month, false) %></p>
+        </div>
       </div>
     </div>
   </div>

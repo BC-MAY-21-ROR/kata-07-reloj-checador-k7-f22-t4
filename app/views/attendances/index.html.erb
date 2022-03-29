@@ -86,17 +86,17 @@
         </form>
         <div class="average">
           <p>Average Time (CI)</p>
-          <p class="time"><%= Attendance.average_check_time_by_month(@avg_month, true) %></p>
+          <p class="time"><%= get_average(@avg_month, true) %></p>
         </div>
         <div class="average">
           <p>Average Time (CO)</p>
-          <p class="time"><%= Attendance.average_check_time_by_month(@avg_month, false) %></p>
+          <p class="time"><%= get_average(@avg_month, false) %></p>
         </div>
       </div>
     </div>
   </div>
   <div class="total-absence">
-    <p>Total absence:</p>
-    <p>Total absence:</p>
+    <p>Total absence: </p>
+    <p>Total attendance: </p>
   </div>
 </div>

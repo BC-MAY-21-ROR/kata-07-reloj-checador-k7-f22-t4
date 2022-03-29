@@ -4,11 +4,10 @@ class AttendancesController < ApplicationController
 
   # GET /attendances or /attendances.json
   def index
-    prueba = Date.today
-    prueba =  Date.parse(params[:day]) if !params[:day].nil?
-    @attendances = Attendance.attendance_by_day(prueba, params[:employee_id])
-    @absences = Attendance.absence_list(Date.parse("#{params[:absence_month]}-01"), params[:employee_id])
-    @avg_month = Date.parse("#{params[:avg_month]}-01")
+    values = (helpers.reports_params(params))
+    @attendances = Attendance.attendance_by_day(values[:day], values[:employee_id])
+    @absences = Attendance.absence_list(Date.parse("#{values[:absence_month]}-01"), values[:employee_id])
+    @avg_month = Date.parse("#{values[:avg_month]}-01")
   end
 
   # GET /attendances/1 or /attendances/1.json
@@ -26,9 +25,23 @@ class AttendancesController < ApplicationController
   # POST /attendances or /attendances.json
   def create
     @employee = Employee.find_by(private_code: attendance_params[:employee_id])
-    if @employee && !helpers.check_complete? then new_check_in
-    elsif @employee && helpers.check_complete? then new_check_out
-    else redirect_to new_attendance_path, alert: "Employee doesn't exist"
+    return redirect_to new_attendance_path, alert: "Employee doesn't exist" unless @employee
+    
+    @attendance = @employee.attendances.where(check_in: Date.today.beginning_of_day..Date.today.end_of_day).last
+    if helpers.check_today?
+      redirect_to new_attendance_path, alert: "You already have assistence today"
+    else
+      @attendance ? new_check_out : new_check_in
+    end
+  end
+
+  # DELETE /attendances/1 or /attendances/1.json
+  def destroy
+    @attendance.destroy
+
+    respond_to do |format|
+      format.html { redirect_to attendances_url, notice: 'Attendance was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 
@@ -66,25 +79,4 @@ class AttendancesController < ApplicationController
       end
     end
   end
-
-  # DELETE /attendances/1 or /attendances/1.json
-  def destroy
-    @attendance.destroy
-
-    respond_to do |format|
-      format.html { redirect_to attendances_url, notice: 'Attendance was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_attendance
-      @attendance = Attendance.find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-    def attendance_params
-      params.require(:attendance).permit(:check_in, :check_out, :employee_id)
-    end
 end

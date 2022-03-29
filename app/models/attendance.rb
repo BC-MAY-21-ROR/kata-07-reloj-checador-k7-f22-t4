@@ -7,29 +7,26 @@ class Attendance < ApplicationRecord
   def self.attendance_by_day(day, employee_id)
     attendances = Attendance.all
     range = day.beginning_of_day..day.end_of_day
-    att = attendances.where(check_in: range)
-    if employee_id && employee_id != '' && Employee.exists?(employee_id)
-      att = attendances.where(check_in: range, employee_id: employee_id)
-    end
-    att
+    return attendances.where(check_in: range, employee_id: employee_id) if employee_id != ''
+
+    attendances.where(check_in: range)
   end
 
   def self.average_check_time_by_month(date, check)
     attendances = month_attendances(date)
-    if attendances.length.positive?
-      check_in = attendances.map { |attendance| check == true ? attendance.check_in : attendance.check_out }
-      Time.at(average(check_in)).strftime('%k:%M')
-    end
+    return attendances unless attendances.length.positive?
+    
+    check_in = attendances.map { |attendance| check == true ? attendance.check_in : attendance.check_out }
+    Time.at(average(check_in)).strftime('%k:%M')
   end
 
   def self.absence_list(date, employee_id)
     absences = []
-    if employee_id && employee_id != '' && Employee.exists?(employee_id)
-      absences << { absence: absence_by_month(date, employee_id), id: employee_id,
-                    name: Employee.find_by(id: employee_id).name }
+    if employee_id != ''
+      absences << { absence: absence(date, employee_id), id: employee_id, name: Employee.find_by(id: employee_id).name }
     else
       Employee.all.each do |employee|
-        absences << { absence: absence_by_month(date, employee.id), id: employee.id, name: employee.name }
+        absences << { absence: absence(date, employee.id), id: employee.id, name: employee.name }
       end
     end
     absences
@@ -41,18 +38,17 @@ class Attendance < ApplicationRecord
 
   def self.average(attendances_list)
     check_in_average = 0
-    if attendances_list.length.positive?
-      attendances_list.each { |date| (check_in_average += date.to_time.to_i) if date }
-      check_in_average /= attendances_list.size
-    end
+    return check_in_average unless attendances_list.length.positive?
+    
+    attendances_list.each { |date| (check_in_average += date.to_i) if date }
+    check_in_average /= attendances_list.size
   end
 
   def self.month_attendances(date)
-    attendances = []
     Attendance.all.where(check_in: range(date))
   end
 
-  def self.absence_by_month(date, employee_id)
+  def self.absence(date, employee_id)
     efective_day(date) - Employee.find_by(id: employee_id).attendances.where(check_in: range(date)).length
   end
 

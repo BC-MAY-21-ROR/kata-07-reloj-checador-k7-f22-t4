@@ -6,11 +6,11 @@ class AttendancesController < ApplicationController
   def index
     values = (helpers.reports_params(params))
     @attendances = Attendance.attendance_by_day(values[:day], values[:employee_id])
-    @absences = Attendance.absence_list(Date.parse("#{values[:absence_month]}-01"), values[:employee_id])
-    @avg_month = Date.parse("#{values[:avg_month]}-01")
+    @absences = Attendance.absence_list(Date.parse("#{params[:absence_month]}-01"), values[:employee_id])
+    @avg_month = Date.parse("#{params[:avg_month]}-01")
   end
 
-  # GET /attendances/1 or /attendances/1.json
+  # GET /attendances/1 or /attendances/1.json   
   def show
   end
 

@@ -8,7 +8,8 @@ module AttendancesHelper
       (params[:day] = Date.parse(params[:day])) if params[:day] != ''
       return params
     end
-    reports_values = { day: DateTime.now, employee_id: '' }
+    employee = params.key?(:employee_id) ? params[:employee_id] : ''
+    reports_values = { day: DateTime.now, employee_id: employee }
   end
 
   def get_average(average, flag)

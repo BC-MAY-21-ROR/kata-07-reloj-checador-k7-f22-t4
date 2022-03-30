@@ -27,7 +27,7 @@ class AttendancesController < ApplicationController
     @employee = Employee.find_by(private_code: attendance_params[:employee_id])
     return redirect_to new_attendance_path, alert: "Employee doesn't exist" unless @employee
     
-    @attendance = @employee.attendances.where(check_in: Date.today.beginning_of_day..Date.today.end_of_day).last
+    @attendance = @employee.attendances.where(check_in: DateTime.now.beginning_of_day..DateTime.now.end_of_day).last
     if helpers.check_today?
       redirect_to new_attendance_path, alert: "You already have assistence today"
     else

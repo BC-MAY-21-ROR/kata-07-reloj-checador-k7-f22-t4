@@ -7,10 +7,17 @@
       <td><%= employee.position %></td>
       <td><%= employee.id %></td>
       <td><%= employee.private_code %></td>
-      <td><%= employee.branch_id %></td>
-      <td><%= employee.active %></td>
-      <td><i class="fa-solid fa-pen-to-square"></i></td>
+      <td><%= employee.branch.name %></td>
+      <td>
+        <label class="switch">
+          <input type="checkbox" <%= employee.active ? "checked" : ""%> onchange="setActives(<%= employee.id %>)">
+          <span class="slider round"></span>
+        </label>
+      </td>
+      <td><%= link_to '<i class="fa-solid fa-pen-to-square"></i>'.html_safe, edit_employee_path(employee.id) %></td>
     </tr>
   </tbody>
 
 </div>
+
+<%= javascript_include_tag 'employees' %>

@@ -2,9 +2,10 @@
   <p>FOO CORP</p>
 </nav>
 <div class="sub-container">
-  <div class="search">
-    <input type="text" placeholder="#Search">
-  </div>
+  <%= form_tag(branches_path, method: :get) do %>
+    <%= text_field_tag(:search, params[:search]) %>
+    <%= submit_tag ("Search") %>
+  <% end %>
   <table class="table branches-table">
     <thead>
       <th>Name</th>

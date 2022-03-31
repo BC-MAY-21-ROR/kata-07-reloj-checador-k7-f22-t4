@@ -4,7 +4,11 @@ class BranchesController < ApplicationController
 
   # GET /branches or /branches.json
   def index
-    @branches = Branch.all
+    if !params[:search].nil?
+      @branches = Branch.search(params[:search])
+    else
+      @branches = Branch.order(:id).all
+    end
   end
 
   # GET /branches/1 or /branches/1.json
@@ -66,6 +70,6 @@ class BranchesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def branch_params
-      params.require(:branch).permit(:name, :address)
+      params.require(:branch).permit(:name, :address, :search)
     end
 end

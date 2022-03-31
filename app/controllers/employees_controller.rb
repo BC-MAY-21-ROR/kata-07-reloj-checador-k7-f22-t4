@@ -5,7 +5,11 @@ class EmployeesController < ApplicationController
 
   # GET /employees or /employees.json
   def index
-    @employees = Employee.order(:id).all
+    if !params[:search].nil?
+      @employees = Employee.search(params[:search])
+    else
+      @employees = Employee.order(:id).all
+    end
   end
 
   # GET /employees/1 or /employees/1.json
@@ -70,7 +74,7 @@ class EmployeesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def employee_params
-      params.require(:employee).permit(:name, :email, :position, :active, :branch_id)
+      params.require(:employee).permit(:name, :email, :position, :active, :branch_id, :search)
     end
 
     def check

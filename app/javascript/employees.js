@@ -5,7 +5,7 @@ setActives = (employee) => {
   xhr.setRequestHeader("X-CSRF-Token", csrf);
   xhr.send();
   xhr.onload = function () {
-    if (xhr.status != 200) {
+    if (xhr.status != 204) {
       alert("Ocurrió un error");
     } else {
         alert("Operación exitosa");

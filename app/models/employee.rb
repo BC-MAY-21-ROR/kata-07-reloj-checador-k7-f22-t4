@@ -1,5 +1,8 @@
 class Employee < ApplicationRecord
   validates :private_code, length: { is: 6 }
+  validates :name, :email, :position, :private_code, :branch_id, :active, presence: true
+  validates :email, :private_code, uniqueness: true
+
   belongs_to :branch
   has_many :attendances
 

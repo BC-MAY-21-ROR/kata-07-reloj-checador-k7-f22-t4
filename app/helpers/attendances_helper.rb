@@ -1,6 +1,18 @@
 module AttendancesHelper
-  def check_complete?
-    last_check = @employee.attendances.last
-    !last_check.check_out? if last_check
+  def check_today?
+    @attendance.check_out if @attendance
+  end
+
+  def reports_params(params)
+    if params.key?(:day)
+      (params[:day] = Date.parse(params[:day])) if params[:day] != ''
+      return params
+    end
+    employee = params.key?(:employee_id) ? params[:employee_id] : ''
+    reports_values = { day: DateTime.now, employee_id: employee }
+  end
+
+  def get_average(average, flag)
+    Attendance.average_check_time_by_month(@avg_month, flag)
   end
 end

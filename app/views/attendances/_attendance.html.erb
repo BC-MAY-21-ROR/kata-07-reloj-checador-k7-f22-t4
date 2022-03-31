@@ -1,9 +1,8 @@
-<div id="<%= dom_id attendance %>">
-  <tbody>
-    <tr>
-      <td><%= attendance.check_in %></td>
-      <td><%= attendance.check_out %></td>
-      <td><%= attendance.employee_id  %></td>
-    </tr>
-  </tbody>
-</div>
+<tbody>
+  <tr>
+    <td><%= Employee.name_by_id(attendance.employee_id) %></td>
+    <td><%= attendance.employee_id %></td>
+    <td><%= attendance.check_in.localtime.strftime('%d/%m/%Y - %H:%M') %></td>
+    <td><%= attendance.check_out.localtime.strftime('%d/%m/%Y - %H:%M') if attendance.check_out %></td>
+  </tr>
+</tbody>

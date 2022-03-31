@@ -4,6 +4,8 @@
 class Attendance < ApplicationRecord
   belongs_to :employee
 
+  scope :last_attendance, -> { where(check_in: DateTime.now.beginning_of_day..DateTime.now.end_of_day) }
+
   def self.attendance_by_day(day, employee_id)
     attendances = Attendance.all
     range = day.beginning_of_day..day.end_of_day
@@ -15,9 +17,9 @@ class Attendance < ApplicationRecord
   def self.average_check_time_by_month(date, check)
     attendances = month_attendances(date)
     return attendances unless attendances.length.positive?
-    
+
     check_list = attendances.map { |attendance| check == true ? attendance.check_in : attendance.check_out }
-    check_list.reject! { |attendance| attendance.nil? }
+    check_list.reject!(&:nil?)
     Time.at(average(check_list)).strftime('%k:%M')
   end
 
@@ -40,6 +42,7 @@ class Attendance < ApplicationRecord
   def self.average(attendances_list)
     check_in_average = 0
     return check_in_average unless attendances_list.length.positive?
+
     attendances_list.each { |date| (check_in_average += date.to_i) if date }
     check_in_average /= attendances_list.size
   end
@@ -57,6 +60,6 @@ class Attendance < ApplicationRecord
       week_day = day.wday
       week_day == 6 || week_day.zero?
     end
-    date.month == Date.today.month ? (efective_day.length - (Date.today.end_of_month - Date.today).to_i) : efective_day.size 
+    date.month == Date.today.month ? (efective_day.length - (Date.today.end_of_month - Date.today).to_i) : efective_day.size
   end
 end

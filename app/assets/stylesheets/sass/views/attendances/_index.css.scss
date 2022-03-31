@@ -149,20 +149,22 @@
 }
 
 .table-wrapper {
-  position:relative;
+  position: relative;
 }
+
 .table-scroll {
-  max-height:60rem;
-  overflow:auto;
+  max-height: 60rem;
+  overflow: auto;
 }
+
 .table-wrapper table {
-  width:100%;
+  width: 100%;
 }
 
 .table-wrapper table thead tr {
   position: sticky;   
   top: 0;
-  z-index:2;
+  z-index: 2;
 }
 
 .submit-icon {

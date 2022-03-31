@@ -4,7 +4,7 @@ class AttendancesController < ApplicationController
 
   # GET /attendances or /attendances.json
   def index
-    values = (helpers.reports_params(params))
+    values = helpers.reports_params(params)
     @attendances = Attendance.attendance_by_day(values[:day], values[:employee_id])
     @absences = Attendance.absence_list(Date.parse("#{params[:absence_month]}-01"), values[:employee_id])
     @avg_month = Date.parse("#{params[:avg_month]}-01")
@@ -27,7 +27,7 @@ class AttendancesController < ApplicationController
     @employee = Employee.find_by(private_code: attendance_params[:employee_id])
     return redirect_to new_attendance_path, alert: "Employee doesn't exist" unless @employee
     
-    @attendance = @employee.attendances.where(check_in: DateTime.now.beginning_of_day..DateTime.now.end_of_day).last
+    @attendance = @employee.attendances.last_attendance.last
     if helpers.check_today?
       redirect_to new_attendance_path, alert: "You already have assistence today"
     else

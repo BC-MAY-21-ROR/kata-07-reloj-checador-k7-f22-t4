@@ -7,7 +7,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
   
-    <%= stylesheet_link_tag "sass/main", "data-tursbo-track": "reload" %>
+    <%= stylesheet_link_tag "sass/main", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
@@ -19,7 +19,9 @@
       <% if alert %>
         <p class="alert"><%= alert %></p>
       <% end %>
-      <%= render "layouts/navbar" %>
+      <% if params[:controller] != 'attendance' && params[:action] != 'new' %>
+        <%= render "layouts/navbar" %>
+      <% end %>
       <%= yield %>
     </div>
   </body>

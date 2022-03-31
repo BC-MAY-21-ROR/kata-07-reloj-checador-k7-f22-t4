@@ -1,12 +1,13 @@
 .sub-container {
   height: 100%;
-  margin: 5% 5%;
   width: 80%;
  
   .search-row {
+    align-items: center;
     display: flex;
     justify-content: space-between;
-
+    width: 100%;
+    
     .month-option {
       align-items: center;
       background-color: $very-dark-cyan;
@@ -16,7 +17,7 @@
       font-size: 18px;
       height: 2rem;
       justify-content: center;
-      width: 33%;
+      width: 7rem;
 
       select {
         background-color: $normal-cyan;
@@ -45,7 +46,6 @@
     border-spacing: 2px;
     font-size: 15px;
     margin: none;
-    padding-top: 15px;
     width: 100%;
  
     td {
@@ -67,7 +67,12 @@
 }
 
 .section {
-  width: 33%;
+  width: 40%;
+}
+
+.averages {
+  margin-left: 0.5rem;
+  width: 20%;
 }
 
 .father-table {
@@ -94,7 +99,8 @@
   flex-direction: column;
   font-size: 15px;
   height: 100%;
-  justify-content: center;
+  justify-content: baseline;
+  padding-top: 1rem;
 }
 
 .average {
@@ -107,7 +113,8 @@
   height: 100px;
   justify-content: space-evenly;
   margin-bottom: 10px;
-  width: 160px;
+  margin-top: 1rem;
+  width: 100%;
 }
 
 .total-absence {
@@ -126,4 +133,45 @@
     width: 30%;
   }
 }
- 
+
+.table-item {
+  width: 40rem;
+  
+  tbody {
+    height: 60vh;
+    overflow: auto;
+    width: 100%;
+
+    tr:nth-child(1) {
+      width: 200px;
+    }
+  }
+}
+
+.table-wrapper {
+  position: relative;
+}
+
+.table-scroll {
+  max-height: 60rem;
+  overflow: auto;
+}
+
+.table-wrapper table {
+  width: 100%;
+}
+
+.table-wrapper table thead tr {
+  position: sticky;   
+  top: 0;
+  z-index: 2;
+}
+
+.submit-icon {
+  width: auto;
+  
+  button {
+    background: none;
+    border: none;
+  }
+}

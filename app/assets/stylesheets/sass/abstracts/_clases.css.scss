@@ -108,9 +108,11 @@
 .alert {
   background-color: rgba(250, 140, 140, 0.658);
   border: 1px solid rgb(250, 140, 140);
+  z-index: 1;
 }
 
 .notice {
   background-color: rgba(175, 250, 140, 0.658);
   border: 1px solid rgb(175, 250, 140);
+  z-index: 1;
 }

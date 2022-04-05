@@ -1,7 +1,8 @@
 <div class="sub-container">
-  <div class="search">
-    <input type="text" placeholder="#Search">
-  </div>
+  <%= form_tag(employees_path, method: :get) do %>
+    <%= text_field_tag(:search, params[:search]) %>
+    <%= submit_tag ("Search") %>
+  <% end %>  
   <table class="table">
     <thead>
       <th>Name</th>
@@ -11,7 +12,7 @@
       <th>Private <br> number</th>
       <th>Branch</th>
       <th>Active</th>
-      <th> </th>
+      <th>Actions</th>
     </thead> 
     <% @employees.each do |employee| %>
       <%= render employee %>

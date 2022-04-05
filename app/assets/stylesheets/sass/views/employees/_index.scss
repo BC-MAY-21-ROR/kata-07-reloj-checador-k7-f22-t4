@@ -72,3 +72,65 @@
 .fa-solid {
   margin: 5px;
 }
+
+/* The switch - the box around the slider */
+.switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+
+  input {
+    height: 0;
+    opacity: 0;
+    width: 0;
+  }
+}
+
+/* The slider */
+.slider {
+  -webkit-transition: .4s;
+  background-color: rgb(223, 70, 70);
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+
+  &:before {
+    -webkit-transition: .4s;
+    background-color: white;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+  }
+}
+
+input:checked + .slider {
+  background-color: $normal-cyan;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $normal-cyan;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+  
+  &:before {
+    border-radius: 50%;
+  }
+}

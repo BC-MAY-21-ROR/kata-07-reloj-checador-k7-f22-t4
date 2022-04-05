@@ -5,7 +5,11 @@ class EmployeesController < ApplicationController
 
   # GET /employees or /employees.json
   def index
-    @employees = Employee.all
+    if !params[:search].nil?
+      @employees = Employee.search(params[:search])
+    else
+      @employees = Employee.order(:id).all
+    end
   end
 
   # GET /employees/1 or /employees/1.json
@@ -34,7 +38,7 @@ class EmployeesController < ApplicationController
     @employee.update(private_code: helpers.generate_code)
     respond_to do |format|
       if @employee.save
-        format.html { redirect_to employee_url(@employee), notice: "Employee was successfully created." }
+        format.html { redirect_to employees_path, notice: "Employee was successfully created." }
         format.json { render :show, status: :created, location: @employee }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -48,7 +52,7 @@ class EmployeesController < ApplicationController
     @branches = Branch.all
     respond_to do |format|
       if @employee.update(employee_params)
-        format.html { redirect_to employee_url(@employee), notice: "Employee was successfully updated." }
+        format.html { redirect_to employees_path, notice: "Employee was successfully updated." }
         format.json { render :show, status: :ok, location: @employee }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -70,7 +74,7 @@ class EmployeesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def employee_params
-      params.require(:employee).permit(:name, :email, :position, :active, :branch_id)
+      params.require(:employee).permit(:name, :email, :position, :active, :branch_id, :search)
     end
 
     def check

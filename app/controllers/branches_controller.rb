@@ -4,7 +4,11 @@ class BranchesController < ApplicationController
 
   # GET /branches or /branches.json
   def index
-    @branches = Branch.all
+    if !params[:search].nil?
+      @branches = Branch.search(params[:search])
+    else
+      @branches = Branch.order(:id).all
+    end
   end
 
   # GET /branches/1 or /branches/1.json
@@ -26,7 +30,7 @@ class BranchesController < ApplicationController
 
     respond_to do |format|
       if @branch.save
-        format.html { redirect_to branch_url(@branch), notice: "Branch was successfully created." }
+        format.html { redirect_to branches_path, notice: "Branch was successfully created." }
         format.json { render :show, status: :created, location: @branch }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +43,7 @@ class BranchesController < ApplicationController
   def update
     respond_to do |format|
       if @branch.update(branch_params)
-        format.html { redirect_to branch_url(@branch), notice: "Branch was successfully updated." }
+        format.html { redirect_to branches_path, notice: "Branch was successfully updated." }
         format.json { render :show, status: :ok, location: @branch }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -66,6 +70,6 @@ class BranchesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def branch_params
-      params.require(:branch).permit(:name, :address)
+      params.require(:branch).permit(:name, :address, :search)
     end
 end

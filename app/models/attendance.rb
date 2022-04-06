@@ -56,10 +56,8 @@ class Attendance < ApplicationRecord
   end
 
   def self.efective_day(date)
-    efective_day = range(date).reject do |day|
-      week_day = day.wday
-      week_day == 6 || week_day.zero?
-    end
-    date.month == Date.today.month ? (efective_day.length - (Date.today.end_of_month - Date.today).to_i) : efective_day.size
+    efective_day = range(date).reject { |day| day.wday == 6 || day.wday.zero? }
+    efective_rest_day = ((Date.today + 1.days)..Date.today.end_of_month).reject { |day| day.wday == 6 || day.wday.zero? }
+    date.month == Date.today.month ? (efective_day.length - efective_rest_day.length) : efective_day.size
   end
 end

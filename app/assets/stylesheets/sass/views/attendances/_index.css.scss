@@ -1,31 +1,6 @@
 .sub-container {
   height: 100%;
   width: 80%;
- 
-  .search-row {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    
-    .month-option {
-      align-items: center;
-      background-color: $very-dark-cyan;
-      border-radius: 15px;
-      color: white;
-      display: flex;
-      font-size: 18px;
-      height: 2rem;
-      justify-content: center;
-      width: 7rem;
-
-      select {
-        background-color: $normal-cyan;
-        height: 20px;
-        width: 30px;
-      }
-    }      
-  }
 
   .search {
     input {

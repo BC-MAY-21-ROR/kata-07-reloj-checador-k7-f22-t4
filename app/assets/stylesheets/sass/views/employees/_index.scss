@@ -3,22 +3,31 @@
   margin: 10% 10%;
   width: 80%;
 
-  .search {
-    display: flex;
-    justify-content: right;
-  
-    input {
-      background-color: $very-dark-cyan;
-      border-radius: 15px;
-      height: 2.5rem;
-      width: 22%;
-    }
+  .search-option {
+    justify-content: left;
+
+    .search {
+      display: flex;
+      justify-content: right;
     
-    input::placeholder { 
-      color: rgb(214, 202, 202);
-      padding-left: 10px;
+      input {
+        background-color: $very-dark-cyan;
+        border-radius: 15px;
+        height: 2.5rem;
+        width: 90%;
+      }
+      
+      input::placeholder { 
+        color: rgb(214, 202, 202);
+        padding-left: 10px;
+      }
+    }
+
+    .field {
+      width: 35%;
     }
   }
+  
 
   .table {
     border-spacing: 2px;
@@ -76,9 +85,9 @@
 /* The switch - the box around the slider */
 .switch {
   display: inline-block;
-  height: 34px;
+  height: 80%;
   position: relative;
-  width: 60px;
+  width: 40%;
 
   input {
     height: 0;
@@ -102,13 +111,13 @@
   &:before {
     -webkit-transition: .4s;
     background-color: white;
-    bottom: 4px;
+    bottom: 2px;
     content: "";
-    height: 26px;
+    height: 80%;
     left: 4px;
     position: absolute;
     transition: .4s;
-    width: 26px;
+    width: 40%;
   }
 }
 
@@ -121,9 +130,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
 }
 
 /* Rounded sliders */

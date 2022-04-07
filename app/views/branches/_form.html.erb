@@ -1,6 +1,6 @@
 <%= form_with(model: branch) do |form| %>
   <% if branch.errors.any? %>
-    <div style="color: red">
+    <div class="error-message">
       <h2><%= pluralize(branch.errors.count, "error") %> prohibited this branch from being saved:</h2>
 
       <ul>

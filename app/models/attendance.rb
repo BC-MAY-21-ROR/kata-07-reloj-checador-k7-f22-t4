@@ -14,13 +14,14 @@ class Attendance < ApplicationRecord
     attendances.where(check_in: range)
   end
 
-  def self.average_check_time_by_month(date, check)
-    attendances = month_attendances(date)
-    return attendances unless attendances.length.positive?
-
-    check_list = attendances.map { |attendance| check == true ? attendance.check_in : attendance.check_out }
+  # check_flag = true -> get the check in average / check_flag = false -> get the check out average 
+  def self.average_check_time_by_month(date, check_flag) 
+    attendances = month_attendances(date) 
+    return attendances unless attendances.length.positive? 
+   
+    check_list = attendances.map { |attendance| check_flag == true ? attendance.check_in : attendance.check_out } 
     check_list.reject!(&:nil?)
-    Time.at(average(check_list)).strftime('%k:%M')
+    Time.at(average(check_list)).strftime('%k:%M') 
   end
 
   def self.absence_list(date, employee_id)

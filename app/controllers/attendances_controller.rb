@@ -29,7 +29,7 @@ class AttendancesController < ApplicationController
     
     @attendance = @employee.attendances.last_attendance.last
     if helpers.check_today?
-      redirect_to new_attendance_path, alert: "You already have assistence today"
+      redirect_to new_attendance_path, alert: 'You already have assistence today'
     else
       @attendance ? new_check_out : new_check_in
     end

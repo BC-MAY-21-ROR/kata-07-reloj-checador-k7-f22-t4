@@ -14,13 +14,14 @@ class Attendance < ApplicationRecord
     attendances.where(check_in: range)
   end
 
-  def self.average_check_time_by_month(date, check)
-    attendances = month_attendances(date)
-    return attendances unless attendances.length.positive?
-
-    check_list = attendances.map { |attendance| check == true ? attendance.check_in : attendance.check_out }
+  # check_flag = true -> get the check in average / check_flag = false -> get the check out average 
+  def self.average_check_time_by_month(date, check_flag) 
+    attendances = month_attendances(date) 
+    return attendances unless attendances.length.positive? 
+   
+    check_list = attendances.map { |attendance| check_flag == true ? attendance.check_in : attendance.check_out } 
     check_list.reject!(&:nil?)
-    Time.at(average(check_list)).strftime('%k:%M')
+    Time.at(average(check_list)).strftime('%k:%M') 
   end
 
   def self.absence_list(date, employee_id)
@@ -56,10 +57,8 @@ class Attendance < ApplicationRecord
   end
 
   def self.efective_day(date)
-    efective_day = range(date).reject do |day|
-      week_day = day.wday
-      week_day == 6 || week_day.zero?
-    end
-    date.month == Date.today.month ? (efective_day.length - (Date.today.end_of_month - Date.today).to_i) : efective_day.size
+    efective_day = range(date).reject { |day| day.wday == 6 || day.wday.zero? }
+    efective_rest_day = ((Date.today + 1.days)..Date.today.end_of_month).reject { |day| day.wday == 6 || day.wday.zero? }
+    date.month == Date.today.month ? (efective_day.length - efective_rest_day.length) : efective_day.size
   end
 end

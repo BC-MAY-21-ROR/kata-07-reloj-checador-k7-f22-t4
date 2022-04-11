@@ -1,6 +1,6 @@
 <%= form_with(model: employee) do |form| %>
   <% if employee.errors.any? %>
-    <div style="color: red">
+    <div class="error-message">
       <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
 
       <ul>
@@ -25,12 +25,7 @@
     <%= form.label :position, style: "display: block" %>
     <%= form.text_field :position %>
   </div>
-  <!---
-  <div>
-    <%= form.label :private_code, style: "display: block" %>
-    <%= form.text_field :private_code %>
-  </div>
-   -->
+  
   <div class="field">
     <%= form.label :active, style: "display: block" %>
     <%= form.check_box :active %>

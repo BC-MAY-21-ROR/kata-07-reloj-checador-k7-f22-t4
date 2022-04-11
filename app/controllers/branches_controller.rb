@@ -43,7 +43,7 @@ class BranchesController < ApplicationController
   def update
     respond_to do |format|
       if @branch.update(branch_params)
-        format.html { redirect_to branches_path, notice: "Branch was successfully updated." }
+        format.html { redirect_to branches_path, notice: 'Branch was successfully updated.' }
         format.json { render :show, status: :ok, location: @branch }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,11 +54,11 @@ class BranchesController < ApplicationController
 
   # DELETE /branches/1 or /branches/1.json
   def destroy
-    @branch.destroy
-
-    respond_to do |format|
-      format.html { redirect_to branches_url, notice: "Branch was successfully destroyed." }
-      format.json { head :no_content }
+    begin
+      @branch.destroy
+      redirect_to branches_path, notice: 'Branch was successfully destroyed.' 
+    rescue ActiveRecord::InvalidForeignKey => e
+      redirect_to branches_path, alert: "Branch with employees, can't be deleted"
     end
   end
 

@@ -12,7 +12,8 @@ module AttendancesHelper
     reports_values = { day: DateTime.now, employee_id: employee }
   end
 
-  def get_average(average, flag)
-    Attendance.average_check_time_by_month(@avg_month, flag)
+  def get_average(check_flag)
+    average = Attendance.average_check_time_by_month(@avg_month, check_flag)
+    average.is_a?(String) ? average : 'Without checks'
   end
 end
